@@ -45,6 +45,13 @@ export interface Certification {
   link?: string;
 }
 
+export interface Award {
+  title: string;
+  issuer: string;
+  date: string;
+  description?: string;
+}
+
 export interface ContactInfo {
   email: string;
   phone?: string;
@@ -62,4 +69,5 @@ export interface PersonalInfo {
   summary?: string[];
   avatar?: string;
   contact: ContactInfo;
+  achievements?: string[];
 }

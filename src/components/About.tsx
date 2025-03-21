@@ -3,6 +3,7 @@ import React from 'react';
 import Section from './ui/Section';
 import { AnimateIn } from './ui/Animation';
 import { PersonalInfo } from '@/lib/types';
+import { CheckCircle2Icon } from 'lucide-react';
 
 interface AboutProps {
   personalInfo: PersonalInfo;
@@ -74,7 +75,25 @@ const About: React.FC<AboutProps> = ({ personalInfo }) => {
               </div>
             </AnimateIn>
             
-            <AnimateIn type="fade-in-up" delay={400}>
+            {personalInfo.achievements && (
+              <AnimateIn type="fade-in-up" delay={400}>
+                <div className="mt-8">
+                  <h3 className="text-lg font-medium mb-4">Key Achievements:</h3>
+                  <div className="space-y-3">
+                    {personalInfo.achievements.map((achievement, index) => (
+                      <div key={index} className="flex items-start">
+                        <div className="mr-3 text-primary mt-1">
+                          <CheckCircle2Icon size={18} />
+                        </div>
+                        <p className="text-foreground/90">{achievement}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </AnimateIn>
+            )}
+            
+            <AnimateIn type="fade-in-up" delay={500}>
               <div className="mt-8">
                 <h3 className="text-lg font-medium mb-4">Technical Toolkit:</h3>
                 <div className="flex flex-wrap gap-3">

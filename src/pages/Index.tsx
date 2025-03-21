@@ -7,9 +7,10 @@ import Skills from '@/components/Skills';
 import Projects from '@/components/Projects';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
-import { PersonalInfo, Experience as ExperienceType, Skill, Project, Education as EducationType, Certification } from '@/lib/types';
+import { PersonalInfo, Experience as ExperienceType, Skill, Project, Education as EducationType, Certification, Award } from '@/lib/types';
 import EducationSection from '@/components/Education';
 import Certifications from '@/components/Certifications';
+import Awards from '@/components/Awards';
 
 const personalInfo: PersonalInfo = {
   fullName: "Amin Shaikh",
@@ -22,6 +23,12 @@ const personalInfo: PersonalInfo = {
     "Strategic Vision: Pioneering projects like 22POULTRY, an innovative open-source information platform for the poultry industry, showcasing my ability to identify and address market gaps.",
     "Cross-Functional Excellence: Proven track record of collaborating with global teams, aligning stakeholders, and driving product vision across different time zones and technological landscapes.",
     "Data-Driven Approach: Leveraging advanced analytics, user research, and tools like Google Analytics, Mixpanel, CleverTap, and Amplitude to make informed product decisions and track performance metrics."
+  ],
+  achievements: [
+    "Led cross-functional teams to deliver product features that increased user engagement by 35%",
+    "Recognized as 'Emerging Product Leader' by GrowthSchool in 2023",
+    "National Rowing Champion representing university team",
+    "Speaker at Product Management Summit 2023 on 'Data-Driven Decision Making in Product Development'"
   ],
   contact: {
     email: "shaikhamin99@outlook.com",
@@ -204,6 +211,14 @@ const projects: Project[] = [
     imageUrl: "https://images.unsplash.com/photo-1460925895917-afdab827c52f",
     link: "https://customer-journey-tool.netlify.app",
     github: "https://github.com/22amin/customer-journey-analysis"
+  },
+  {
+    id: "proj6",
+    title: "Product Analytics Dashboard",
+    description: "Interactive dashboard for product managers to track user engagement metrics, feature adoption, and conversion funnel analytics in real-time.",
+    tags: ["Data Visualization", "Product Analytics", "Dashboard Design", "User Metrics"],
+    imageUrl: "https://images.unsplash.com/photo-1553484771-11998c592b9c",
+    link: "https://product-analytics-dashboard.vercel.app"
   }
 ];
 
@@ -254,6 +269,33 @@ const certifications: Certification[] = [
   }
 ];
 
+const awards: Award[] = [
+  {
+    title: "National Rowing Championship",
+    issuer: "Indian Rowing Federation",
+    date: "2022",
+    description: "First place in the collegiate rowing championship, representing university team in the national competition."
+  },
+  {
+    title: "Emerging Product Leader",
+    issuer: "GrowthSchool",
+    date: "2023",
+    description: "Recognized for exceptional leadership in product management and innovation."
+  },
+  {
+    title: "Best Product Pitch",
+    issuer: "Startup India Hackathon",
+    date: "2023",
+    description: "Won first place for the most innovative product pitch at the national hackathon."
+  },
+  {
+    title: "NCC Senior Division Certificate",
+    issuer: "National Cadet Corps",
+    date: "2020",
+    description: "Completed senior division training program with distinction, demonstrating leadership and discipline."
+  }
+];
+
 const Index: React.FC = () => {
   useEffect(() => {
     // Smooth scroll for anchor links
@@ -290,11 +332,20 @@ const Index: React.FC = () => {
       <main>
         <Hero personalInfo={personalInfo} />
         <About personalInfo={personalInfo} />
-        <Experience experiences={experiences} />
+        <div className="relative py-12 bg-secondary/10">
+          <div className="absolute top-0 left-0 w-full h-24 bg-gradient-to-b from-background to-transparent"></div>
+          <Experience experiences={experiences} />
+          <Projects projects={projects} />
+          <div className="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-t from-background to-transparent"></div>
+        </div>
         <Skills skills={skills} />
-        <Projects projects={projects} />
-        <EducationSection education={education} />
-        <Certifications certifications={certifications} />
+        <div className="relative py-12 bg-secondary/20">
+          <div className="absolute top-0 left-0 w-full h-24 bg-gradient-to-b from-background to-transparent"></div>
+          <EducationSection education={education} />
+          <Certifications certifications={certifications} />
+          <div className="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-t from-background to-transparent"></div>
+        </div>
+        <Awards awards={awards} />
         <Contact contactInfo={personalInfo.contact} />
       </main>
       <Footer contactInfo={personalInfo.contact} fullName={personalInfo.fullName} />
