@@ -193,62 +193,65 @@ const CarouselItem = React.forwardRef<
 })
 CarouselItem.displayName = "CarouselItem"
 
-const CarouselPrevious = React.forwardRef<
-  HTMLButtonElement,
-  React.ComponentProps<"button">
->(({ className, variant = "outline", size = "icon", ...props }, ref) => {
-  const { orientation, scrollPrev, canScrollPrev } = useCarousel()
+type CarouselButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
+  variant?: "outline" | "default" | "ghost" | "link" | "destructive" | "secondary"
+  size?: "default" | "sm" | "lg" | "icon"
+}
 
-  return (
-    <button
-      ref={ref}
-      className={cn(
-        buttonVariants({ variant, size }),
-        !canScrollPrev &&
-          "disabled:cursor-not-allowed disabled:opacity-50",
-        className
-      )}
-      disabled={!canScrollPrev}
-      onClick={scrollPrev}
-      {...props}
-    >
-      <ArrowLeftIcon
-        className="h-4 w-4"
-        aria-hidden="true"
-      />
-      <span className="sr-only">Previous slide</span>
-    </button>
-  )
-})
+const CarouselPrevious = React.forwardRef<HTMLButtonElement, CarouselButtonProps>(
+  ({ className, variant = "outline", size = "icon", ...props }, ref) => {
+    const { orientation, scrollPrev, canScrollPrev } = useCarousel()
+
+    return (
+      <button
+        ref={ref}
+        className={cn(
+          buttonVariants({ variant, size }),
+          !canScrollPrev &&
+            "disabled:cursor-not-allowed disabled:opacity-50",
+          className
+        )}
+        disabled={!canScrollPrev}
+        onClick={scrollPrev}
+        {...props}
+      >
+        <ArrowLeftIcon
+          className="h-4 w-4"
+          aria-hidden="true"
+        />
+        <span className="sr-only">Previous slide</span>
+      </button>
+    )
+  }
+)
 CarouselPrevious.displayName = "CarouselPrevious"
 
-const CarouselNext = React.forwardRef<
-  HTMLButtonElement,
-  React.ComponentProps<"button">
->(({ className, variant = "outline", size = "icon", ...props }, ref) => {
-  const { orientation, scrollNext, canScrollNext } = useCarousel()
+const CarouselNext = React.forwardRef<HTMLButtonElement, CarouselButtonProps>(
+  ({ className, variant = "outline", size = "icon", ...props }, ref) => {
+    const { orientation, scrollNext, canScrollNext } = useCarousel()
 
-  return (
-    <button
-      ref={ref}
-      className={cn(
-        buttonVariants({ variant, size }),
-        !canScrollNext &&
-          "disabled:cursor-not-allowed disabled:opacity-50",
-        className
-      )}
-      disabled={!canScrollNext}
-      onClick={scrollNext}
-      {...props}
-    >
-      <ArrowRightIcon
-        className="h-4 w-4"
-        aria-hidden="true"
-      />
-      <span className="sr-only">Next slide</span>
-    </button>
-  )
-})
+    return (
+      <button
+        ref={ref}
+        className={cn(
+          buttonVariants({ variant, size }),
+          !canScrollNext &&
+            "disabled:cursor-not-allowed disabled:opacity-50",
+          className
+        )}
+        disabled={!canScrollNext}
+        onClick={scrollNext}
+        {...props}
+      >
+        <ArrowRightIcon
+          className="h-4 w-4"
+          aria-hidden="true"
+        />
+        <span className="sr-only">Next slide</span>
+      </button>
+    )
+  }
+)
 CarouselNext.displayName = "CarouselNext"
 
 export {
