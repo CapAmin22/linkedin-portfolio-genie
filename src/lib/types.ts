@@ -38,11 +38,20 @@ export interface Education {
   logo?: string;
 }
 
+export interface Certification {
+  name: string;
+  issuer: string;
+  date: string;
+  link?: string;
+}
+
 export interface ContactInfo {
   email: string;
+  phone?: string;
   linkedin?: string;
   github?: string;
   twitter?: string;
+  website?: string;
   location?: string;
 }
 
@@ -50,6 +59,7 @@ export interface PersonalInfo {
   fullName: string;
   title: string;
   bio: string;
+  summary?: string[];
   avatar?: string;
   contact: ContactInfo;
 }

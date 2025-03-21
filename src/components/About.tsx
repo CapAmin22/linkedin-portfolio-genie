@@ -28,8 +28,8 @@ const About: React.FC<AboutProps> = ({ personalInfo }) => {
                 />
               ) : (
                 <img 
-                  src="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b"
-                  alt="Computer"
+                  src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2"
+                  alt="Product Management"
                   className="w-full h-auto rounded-lg shadow-lg object-cover"
                 />
               )}
@@ -50,31 +50,42 @@ const About: React.FC<AboutProps> = ({ personalInfo }) => {
             
             <AnimateIn type="fade-in-up" delay={200}>
               <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                Passionate and Dedicated Professional
+                Passionate Product Management Professional
               </h2>
             </AnimateIn>
             
             <AnimateIn type="fade-in-up" delay={300}>
               <div className="prose prose-lg max-w-none">
-                <p className="text-foreground/80 mb-6">
-                  {personalInfo.bio}
-                </p>
-                <p className="text-foreground/80 mb-6">
-                  With a strong background in my field, I focus on delivering high-quality results and constantly improving my skills. I believe in the power of collaboration and innovative thinking to solve complex problems.
-                </p>
+                {personalInfo.summary && personalInfo.summary.map((paragraph, index) => (
+                  <p key={index} className="text-foreground/80 mb-4">
+                    {paragraph}
+                  </p>
+                ))}
+                
+                {!personalInfo.summary && (
+                  <p className="text-foreground/80 mb-6">
+                    {personalInfo.bio}
+                  </p>
+                )}
+                
                 <p className="text-foreground/80">
-                  When I'm not working, you can find me exploring new technologies, contributing to open-source projects, or enjoying outdoor activities to maintain a healthy work-life balance.
+                  Beyond work, I'm a National Rowing Champion and NCC Senior, bringing the same discipline, strategy, and passion to product management that I apply to sports and personal growth. Always eager to transform innovative ideas into impactful solutions.
                 </p>
               </div>
             </AnimateIn>
             
             <AnimateIn type="fade-in-up" delay={400}>
-              <div className="mt-8 flex flex-wrap gap-3">
-                <div className="px-4 py-2 bg-secondary rounded-md text-sm font-medium">Problem Solving</div>
-                <div className="px-4 py-2 bg-secondary rounded-md text-sm font-medium">Teamwork</div>
-                <div className="px-4 py-2 bg-secondary rounded-md text-sm font-medium">Communication</div>
-                <div className="px-4 py-2 bg-secondary rounded-md text-sm font-medium">Time Management</div>
-                <div className="px-4 py-2 bg-secondary rounded-md text-sm font-medium">Adaptability</div>
+              <div className="mt-8">
+                <h3 className="text-lg font-medium mb-4">Technical Toolkit:</h3>
+                <div className="flex flex-wrap gap-3">
+                  <div className="px-4 py-2 bg-secondary rounded-md text-sm font-medium">Figma</div>
+                  <div className="px-4 py-2 bg-secondary rounded-md text-sm font-medium">Wireframing</div>
+                  <div className="px-4 py-2 bg-secondary rounded-md text-sm font-medium">Miro</div>
+                  <div className="px-4 py-2 bg-secondary rounded-md text-sm font-medium">Amplitude</div>
+                  <div className="px-4 py-2 bg-secondary rounded-md text-sm font-medium">Mixpanel</div>
+                  <div className="px-4 py-2 bg-secondary rounded-md text-sm font-medium">JIRA</div>
+                  <div className="px-4 py-2 bg-secondary rounded-md text-sm font-medium">Excel</div>
+                </div>
               </div>
             </AnimateIn>
           </div>
