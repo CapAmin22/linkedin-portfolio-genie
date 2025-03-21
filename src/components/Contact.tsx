@@ -5,48 +5,92 @@ import { AnimateIn } from './ui/Animation';
 import Button from './ui/Button';
 import { ContactInfo } from '@/lib/types';
 import { MailIcon, LinkedinIcon, GithubIcon, MapPinIcon, SendIcon } from 'lucide-react';
+import { ContactService, ContactFormData } from '@/lib/services/contact-service';
 
 interface ContactProps {
   contactInfo: ContactInfo;
 }
 
 const Contact: React.FC<ContactProps> = ({ contactInfo }) => {
-  const [formState, setFormState] = useState({
+  const [formState, setFormState] = useState<ContactFormData>({
     name: '',
     email: '',
     subject: '',
     message: ''
   });
   
+  const [formErrors, setFormErrors] = useState<Partial<Record<keyof ContactFormData, string>>>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(false);
+  
+  const validateForm = (): boolean => {
+    const errors: Partial<Record<keyof ContactFormData, string>> = {};
+    
+    if (!formState.name.trim()) {
+      errors.name = 'Name is required';
+    }
+    
+    if (!formState.email.trim()) {
+      errors.email = 'Email is required';
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formState.email)) {
+      errors.email = 'Please enter a valid email address';
+    }
+    
+    if (!formState.subject.trim()) {
+      errors.subject = 'Subject is required';
+    }
+    
+    if (!formState.message.trim()) {
+      errors.message = 'Message is required';
+    } else if (formState.message.trim().length < 10) {
+      errors.message = 'Message must be at least 10 characters';
+    }
+    
+    setFormErrors(errors);
+    return Object.keys(errors).length === 0;
+  };
   
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormState(prev => ({ ...prev, [name]: value }));
+    
+    // Clear the error when user types
+    if (formErrors[name as keyof ContactFormData]) {
+      setFormErrors(prev => ({ ...prev, [name]: '' }));
+    }
   };
   
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    
+    if (!validateForm()) {
+      return;
+    }
+    
     setIsSubmitting(true);
     
-    // Simulate form submission
-    setTimeout(() => {
-      console.log('Form submitted:', formState);
-      setIsSubmitting(false);
-      setSubmitSuccess(true);
-      setFormState({
-        name: '',
-        email: '',
-        subject: '',
-        message: ''
-      });
+    try {
+      const success = await ContactService.submitContactForm(formState);
       
-      // Reset success message after 5 seconds
-      setTimeout(() => {
-        setSubmitSuccess(false);
-      }, 5000);
-    }, 1500);
+      if (success) {
+        setSubmitSuccess(true);
+        setFormState({
+          name: '',
+          email: '',
+          subject: '',
+          message: ''
+        });
+        
+        // Reset success message after 5 seconds
+        setTimeout(() => {
+          setSubmitSuccess(false);
+        }, 5000);
+      }
+    } catch (error) {
+      console.error('Error submitting the form:', error);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -202,9 +246,12 @@ const Contact: React.FC<ContactProps> = ({ contactInfo }) => {
                           required
                           value={formState.name}
                           onChange={handleChange}
-                          className="w-full px-4 py-2 border border-input rounded-md focus:outline-none focus:ring-2 focus:ring-primary/50 transition-colors"
+                          className={`w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-primary/50 transition-colors ${formErrors.name ? 'border-red-500 bg-red-50' : 'border-input'}`}
                           placeholder="Your name"
                         />
+                        {formErrors.name && (
+                          <p className="text-red-500 text-xs mt-1">{formErrors.name}</p>
+                        )}
                       </div>
                       
                       <div>
@@ -218,9 +265,12 @@ const Contact: React.FC<ContactProps> = ({ contactInfo }) => {
                           required
                           value={formState.email}
                           onChange={handleChange}
-                          className="w-full px-4 py-2 border border-input rounded-md focus:outline-none focus:ring-2 focus:ring-primary/50 transition-colors"
+                          className={`w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-primary/50 transition-colors ${formErrors.email ? 'border-red-500 bg-red-50' : 'border-input'}`}
                           placeholder="Your email"
                         />
+                        {formErrors.email && (
+                          <p className="text-red-500 text-xs mt-1">{formErrors.email}</p>
+                        )}
                       </div>
                     </div>
                     
@@ -235,9 +285,12 @@ const Contact: React.FC<ContactProps> = ({ contactInfo }) => {
                         required
                         value={formState.subject}
                         onChange={handleChange}
-                        className="w-full px-4 py-2 border border-input rounded-md focus:outline-none focus:ring-2 focus:ring-primary/50 transition-colors"
+                        className={`w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-primary/50 transition-colors ${formErrors.subject ? 'border-red-500 bg-red-50' : 'border-input'}`}
                         placeholder="Subject of your message"
                       />
+                      {formErrors.subject && (
+                        <p className="text-red-500 text-xs mt-1">{formErrors.subject}</p>
+                      )}
                     </div>
                     
                     <div>
@@ -251,9 +304,12 @@ const Contact: React.FC<ContactProps> = ({ contactInfo }) => {
                         value={formState.message}
                         onChange={handleChange}
                         rows={5}
-                        className="w-full px-4 py-2 border border-input rounded-md focus:outline-none focus:ring-2 focus:ring-primary/50 transition-colors resize-none"
+                        className={`w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-primary/50 transition-colors resize-none ${formErrors.message ? 'border-red-500 bg-red-50' : 'border-input'}`}
                         placeholder="Your message"
                       />
+                      {formErrors.message && (
+                        <p className="text-red-500 text-xs mt-1">{formErrors.message}</p>
+                      )}
                     </div>
                     
                     <div>

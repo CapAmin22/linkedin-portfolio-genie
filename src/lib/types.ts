@@ -71,3 +71,8 @@ export interface PersonalInfo {
   contact: ContactInfo;
   achievements?: string[];
 }
+
+export interface FormSubmissionResponse {
+  success: boolean;
+  message: string;
+}

@@ -29,7 +29,7 @@ const Awards: React.FC<AwardsProps> = ({ awards }) => {
               type="fade-in-up" 
               delay={index * 100}
             >
-              <div className="bg-background rounded-lg shadow-sm p-6 border border-secondary/50 hover:border-primary/30 transition-all duration-300">
+              <div className="bg-background rounded-lg shadow-sm p-6 border border-secondary/50 hover:border-primary/30 transition-all duration-300 hover:shadow-md">
                 <div className="flex items-start gap-4">
                   <div className="bg-primary/10 p-3 rounded-full text-primary">
                     <TrophyIcon size={24} />
@@ -37,12 +37,12 @@ const Awards: React.FC<AwardsProps> = ({ awards }) => {
                   <div className="flex-1">
                     <h3 className="text-xl font-bold mb-2">{award.title}</h3>
                     <div className="flex flex-col md:flex-row md:items-center gap-2 text-sm mb-3">
-                      <span className="text-foreground/70">{award.issuer}</span>
+                      <span className="text-foreground/70 font-medium">{award.issuer}</span>
                       <span className="hidden md:block text-foreground/50">•</span>
                       <span className="text-foreground/70">{award.date}</span>
                     </div>
                     {award.description && (
-                      <p className="text-foreground/80">{award.description}</p>
+                      <p className="text-foreground/80 text-sm md:text-base">{award.description}</p>
                     )}
                   </div>
                 </div>
