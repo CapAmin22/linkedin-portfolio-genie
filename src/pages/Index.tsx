@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import Header from '@/components/Header';
 import Hero from '@/components/Hero';
@@ -8,11 +7,10 @@ import Skills from '@/components/Skills';
 import Projects from '@/components/Projects';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
-import { PersonalInfo, Experience as ExperienceType, Skill, Project, Education, Certification } from '@/lib/types';
-import Education from '@/components/Education';
+import { PersonalInfo, Experience as ExperienceType, Skill, Project, Education as EducationType, Certification } from '@/lib/types';
+import EducationSection from '@/components/Education';
 import Certifications from '@/components/Certifications';
 
-// Amin's LinkedIn data from the provided images
 const personalInfo: PersonalInfo = {
   fullName: "Amin Shaikh",
   title: "Product Management | Founder | UX/UI | Ideation | Data-Driven Decision Making | Product Road-Mapping | GTM | Polymath",
@@ -209,7 +207,7 @@ const projects: Project[] = [
   }
 ];
 
-const education: Education[] = [
+const education: EducationType[] = [
   {
     institution: "Savitribai Phule Pune University",
     degree: "Bachelor's degree",
@@ -295,7 +293,7 @@ const Index: React.FC = () => {
         <Experience experiences={experiences} />
         <Skills skills={skills} />
         <Projects projects={projects} />
-        <Education education={education} />
+        <EducationSection education={education} />
         <Certifications certifications={certifications} />
         <Contact contactInfo={personalInfo.contact} />
       </main>
