@@ -1,5 +1,6 @@
 
 import { toast } from "@/hooks/use-toast";
+import { submitContactMessage } from "@/lib/supabase";
 
 export interface ContactFormData {
   name: string;
@@ -13,17 +14,17 @@ export class ContactService {
     try {
       console.log("Submitting form data:", formData);
       
-      // In a real application, this would be an API call
-      // For demonstration, we'll simulate a successful submission with network delay
-      await new Promise(resolve => setTimeout(resolve, 1500));
-      
-      // Simulate validation - email validation on backend side
+      // Validate email format
       if (!formData.email.includes('@')) {
         throw new Error('Invalid email format');
       }
       
-      // Log the submission (this would be an API call in production)
-      console.log("Form submitted successfully:", formData);
+      // Submit to Supabase
+      const response = await submitContactMessage(formData);
+      
+      if (!response.success) {
+        throw new Error(response.message);
+      }
       
       // Show success toast
       toast({

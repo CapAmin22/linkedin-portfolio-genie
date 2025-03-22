@@ -16,7 +16,8 @@ export const buttonVariants = cva(
         link: "bg-transparent underline-offset-4 hover:underline text-primary hover:text-primary/90 p-0 focus:ring-0",
         destructive: "bg-destructive text-destructive-foreground hover:bg-destructive/90 focus:ring-destructive",
         secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/80 focus:ring-secondary",
-        gradient: "btn-gradient hover:opacity-90 focus:ring-primary"
+        gradient: "bg-gradient-to-r from-purple-600 to-indigo-600 text-white hover:from-purple-700 hover:to-indigo-700 focus:ring-purple-500",
+        soft: "bg-primary/10 text-primary hover:bg-primary/20 focus:ring-primary/30",
       },
       size: {
         sm: "text-sm h-8 px-3 py-1.5 rounded-md",

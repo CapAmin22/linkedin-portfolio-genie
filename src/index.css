@@ -1,10 +1,11 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
+    --background: 250 20% 98%;
     --foreground: 240 10% 3.9%;
 
     --card: 0 0% 100%;
@@ -13,7 +14,7 @@
     --popover: 0 0% 100%;
     --popover-foreground: 240 10% 3.9%;
 
-    --primary: 240 5.9% 10%;
+    --primary: 254 56% 62%;
     --primary-foreground: 0 0% 98%;
 
     --secondary: 240 4.8% 95.9%;
@@ -30,7 +31,7 @@
 
     --border: 240 5.9% 90%;
     --input: 240 5.9% 90%;
-    --ring: 240 5.9% 10%;
+    --ring: 252 56% 62%;
 
     --radius: 0.5rem;
 
@@ -45,17 +46,17 @@
   }
 
   .dark {
-    --background: 240 10% 3.9%;
+    --background: 240 10% 5%;
     --foreground: 0 0% 98%;
 
-    --card: 240 10% 3.9%;
+    --card: 240 10% 7%;
     --card-foreground: 0 0% 98%;
 
-    --popover: 240 10% 3.9%;
+    --popover: 240 10% 8%;
     --popover-foreground: 0 0% 98%;
 
-    --primary: 0 0% 98%;
-    --primary-foreground: 240 5.9% 10%;
+    --primary: 254 56% 62%;
+    --primary-foreground: 0 0% 98%;
 
     --secondary: 240 3.7% 15.9%;
     --secondary-foreground: 0 0% 98%;
@@ -71,7 +72,7 @@
 
     --border: 240 3.7% 15.9%;
     --input: 240 3.7% 15.9%;
-    --ring: 240 4.9% 83.9%;
+    --ring: 254 56% 62%;
 
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
@@ -129,7 +130,7 @@
   }
   
   .gradient-text {
-    @apply bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent;
   }
   
   .section-divider {
@@ -147,6 +148,42 @@
   
   .section-divider::after {
     @apply bottom-0 bg-gradient-to-t from-background to-transparent;
+  }
+
+  /* Modern glass morphism effects */
+  .glass-morphism {
+    @apply bg-white/10 backdrop-blur-lg border border-white/20 dark:bg-black/20 dark:border-white/10;
+  }
+
+  .glass-card {
+    @apply glass-morphism rounded-xl shadow-lg;
+  }
+
+  .glass-button {
+    @apply glass-morphism hover:bg-white/20 dark:hover:bg-black/30 transition-all duration-300;
+  }
+
+  /* Modern gradient buttons */
+  .btn-modern-gradient {
+    @apply bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white transition-all duration-300;
+  }
+  
+  /* Border animations */
+  .border-animated {
+    @apply relative;
+  }
+  
+  .border-animated::after {
+    @apply content-[''] absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-purple-600 to-indigo-600 transition-all duration-300;
+  }
+  
+  .border-animated:hover::after {
+    @apply w-full;
+  }
+  
+  /* Interactive card effects */
+  .card-hover-effect {
+    @apply transition-all duration-300 hover:-translate-y-1 hover:shadow-lg;
   }
 }
 
@@ -314,5 +351,16 @@ p {
 
 /* Button variations */
 .btn-gradient {
-  @apply bg-gradient-to-r from-primary to-primary/80 text-primary-foreground;
+  @apply bg-gradient-to-r from-purple-600 to-indigo-600 text-white hover:from-purple-700 hover:to-indigo-700;
+}
+
+/* Modern indicator animations */
+.ripple-element {
+  @apply relative overflow-hidden;
+}
+
+.ripple-element::after {
+  @apply content-[''] absolute w-5 h-5 rounded-full bg-white/30 animate-ripple pointer-events-none;
+  top: calc(var(--y, 0) * 1px - 10px);
+  left: calc(var(--x, 0) * 1px - 10px);
 }

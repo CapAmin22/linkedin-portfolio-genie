@@ -4,8 +4,10 @@ import Section from './ui/Section';
 import { AnimateIn } from './ui/Animation';
 import Button from './ui/Button';
 import { ContactInfo } from '@/lib/types';
-import { MailIcon, LinkedinIcon, GithubIcon, MapPinIcon, SendIcon } from 'lucide-react';
+import { MailIcon, LinkedinIcon, GithubIcon, MapPinIcon, SendIcon, ArrowRightIcon } from 'lucide-react';
 import { ContactService, ContactFormData } from '@/lib/services/contact-service';
+import { Input } from './ui/input';
+import { Alert, AlertDescription, AlertTitle } from './ui/alert';
 
 interface ContactProps {
   contactInfo: ContactInfo;
@@ -94,18 +96,21 @@ const Contact: React.FC<ContactProps> = ({ contactInfo }) => {
   };
 
   return (
-    <Section id="contact" className="py-20 md:py-28 relative">
-      {/* Background decor elements */}
-      <div className="absolute top-0 left-0 w-1/2 h-1/2 bg-primary/5 rounded-full filter blur-3xl opacity-50 -z-10 transform -translate-x-1/2" />
-      <div className="absolute bottom-0 right-0 w-1/3 h-1/3 bg-secondary/30 rounded-full filter blur-3xl opacity-50 -z-10 transform translate-x-1/3" />
+    <Section id="contact" className="py-20 md:py-28 relative overflow-hidden">
+      {/* Background elements */}
+      <div className="absolute top-0 left-0 w-full h-full overflow-hidden -z-10">
+        <div className="absolute -top-48 -left-48 w-96 h-96 bg-purple-500/10 rounded-full filter blur-3xl opacity-70" />
+        <div className="absolute top-1/4 right-0 w-80 h-80 bg-indigo-500/10 rounded-full filter blur-3xl opacity-60" />
+        <div className="absolute bottom-0 left-1/3 w-64 h-64 bg-blue-500/10 rounded-full filter blur-3xl opacity-60" />
+      </div>
       
       <div className="container mx-auto px-4">
         <AnimateIn type="fade-in-up">
           <div className="text-center mb-16">
-            <div className="inline-block px-4 py-1 bg-primary/10 text-primary rounded-full text-sm font-medium mb-4">
-              Contact
+            <div className="inline-block px-4 py-1 bg-gradient-to-r from-purple-500/10 to-indigo-500/10 text-primary rounded-full text-sm font-medium mb-4">
+              Get In Touch
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Get In Touch</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent">Let's Connect</h2>
             <p className="text-foreground/70 max-w-xl mx-auto">
               Feel free to reach out if you're looking for a collaborator, have a question, or just want to connect.
             </p>
@@ -116,26 +121,31 @@ const Contact: React.FC<ContactProps> = ({ contactInfo }) => {
           <div className="flex flex-col md:flex-row gap-12">
             {/* Left column - Contact info */}
             <AnimateIn type="fade-in" className="md:w-2/5">
-              <div className="h-full bg-background rounded-lg shadow-sm p-8 border flex flex-col">
-                <h3 className="text-xl font-bold mb-6">Contact Information</h3>
+              <div className="h-full bg-background/80 backdrop-blur-sm rounded-xl shadow-lg p-8 border border-white/10">
+                <h3 className="text-xl font-bold mb-6 relative inline-block">
+                  Contact Information
+                  <span className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-purple-500 to-indigo-500 rounded"></span>
+                </h3>
                 
-                <div className="space-y-6 flex-grow">
-                  <div className="flex items-start">
-                    <div className="bg-primary/10 p-3 rounded-full mr-4">
-                      <MailIcon size={20} className="text-primary" />
+                <div className="space-y-8 flex-grow">
+                  <div className="flex items-start group">
+                    <div className="bg-gradient-to-br from-purple-500/20 to-indigo-500/20 p-4 rounded-full mr-5 transition-all duration-300 group-hover:from-purple-500/30 group-hover:to-indigo-500/30">
+                      <MailIcon size={22} className="text-primary" />
                     </div>
                     <div>
                       <h4 className="text-sm font-medium text-foreground/60 mb-1">Email</h4>
-                      <a href={`mailto:${contactInfo.email}`} className="text-foreground hover:text-primary transition-colors">
+                      <a href={`mailto:${contactInfo.email}`} 
+                        className="text-foreground group-hover:text-primary transition-colors flex items-center">
                         {contactInfo.email}
+                        <ArrowRightIcon size={14} className="ml-1 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300" />
                       </a>
                     </div>
                   </div>
                   
                   {contactInfo.linkedin && (
-                    <div className="flex items-start">
-                      <div className="bg-primary/10 p-3 rounded-full mr-4">
-                        <LinkedinIcon size={20} className="text-primary" />
+                    <div className="flex items-start group">
+                      <div className="bg-gradient-to-br from-purple-500/20 to-indigo-500/20 p-4 rounded-full mr-5 transition-all duration-300 group-hover:from-purple-500/30 group-hover:to-indigo-500/30">
+                        <LinkedinIcon size={22} className="text-primary" />
                       </div>
                       <div>
                         <h4 className="text-sm font-medium text-foreground/60 mb-1">LinkedIn</h4>
@@ -143,18 +153,19 @@ const Contact: React.FC<ContactProps> = ({ contactInfo }) => {
                           href={contactInfo.linkedin}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="text-foreground hover:text-primary transition-colors"
+                          className="text-foreground group-hover:text-primary transition-colors flex items-center"
                         >
                           Connect on LinkedIn
+                          <ArrowRightIcon size={14} className="ml-1 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300" />
                         </a>
                       </div>
                     </div>
                   )}
                   
                   {contactInfo.github && (
-                    <div className="flex items-start">
-                      <div className="bg-primary/10 p-3 rounded-full mr-4">
-                        <GithubIcon size={20} className="text-primary" />
+                    <div className="flex items-start group">
+                      <div className="bg-gradient-to-br from-purple-500/20 to-indigo-500/20 p-4 rounded-full mr-5 transition-all duration-300 group-hover:from-purple-500/30 group-hover:to-indigo-500/30">
+                        <GithubIcon size={22} className="text-primary" />
                       </div>
                       <div>
                         <h4 className="text-sm font-medium text-foreground/60 mb-1">GitHub</h4>
@@ -162,18 +173,19 @@ const Contact: React.FC<ContactProps> = ({ contactInfo }) => {
                           href={contactInfo.github}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="text-foreground hover:text-primary transition-colors"
+                          className="text-foreground group-hover:text-primary transition-colors flex items-center"
                         >
                           View GitHub Profile
+                          <ArrowRightIcon size={14} className="ml-1 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300" />
                         </a>
                       </div>
                     </div>
                   )}
                   
                   {contactInfo.location && (
-                    <div className="flex items-start">
-                      <div className="bg-primary/10 p-3 rounded-full mr-4">
-                        <MapPinIcon size={20} className="text-primary" />
+                    <div className="flex items-start group">
+                      <div className="bg-gradient-to-br from-purple-500/20 to-indigo-500/20 p-4 rounded-full mr-5 transition-all duration-300 group-hover:from-purple-500/30 group-hover:to-indigo-500/30">
+                        <MapPinIcon size={22} className="text-primary" />
                       </div>
                       <div>
                         <h4 className="text-sm font-medium text-foreground/60 mb-1">Location</h4>
@@ -183,18 +195,18 @@ const Contact: React.FC<ContactProps> = ({ contactInfo }) => {
                   )}
                 </div>
                 
-                <div className="mt-8 pt-8 border-t">
-                  <h4 className="text-sm font-medium mb-4">Connect with me</h4>
+                <div className="mt-10 pt-8 border-t border-white/10">
+                  <h4 className="text-sm font-medium mb-5">Connect with me</h4>
                   <div className="flex space-x-4">
                     {contactInfo.linkedin && (
                       <a 
                         href={contactInfo.linkedin}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="bg-secondary p-3 rounded-full text-foreground hover:text-primary transition-colors"
+                        className="bg-gradient-to-br from-purple-500/10 to-indigo-500/10 p-3 rounded-full text-foreground hover:text-primary transition-all duration-300 hover:from-purple-500/20 hover:to-indigo-500/20"
                         aria-label="LinkedIn"
                       >
-                        <LinkedinIcon size={18} />
+                        <LinkedinIcon size={20} />
                       </a>
                     )}
                     
@@ -203,19 +215,19 @@ const Contact: React.FC<ContactProps> = ({ contactInfo }) => {
                         href={contactInfo.github}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="bg-secondary p-3 rounded-full text-foreground hover:text-primary transition-colors"
+                        className="bg-gradient-to-br from-purple-500/10 to-indigo-500/10 p-3 rounded-full text-foreground hover:text-primary transition-all duration-300 hover:from-purple-500/20 hover:to-indigo-500/20"
                         aria-label="GitHub"
                       >
-                        <GithubIcon size={18} />
+                        <GithubIcon size={20} />
                       </a>
                     )}
                     
                     <a 
                       href={`mailto:${contactInfo.email}`}
-                      className="bg-secondary p-3 rounded-full text-foreground hover:text-primary transition-colors"
+                      className="bg-gradient-to-br from-purple-500/10 to-indigo-500/10 p-3 rounded-full text-foreground hover:text-primary transition-all duration-300 hover:from-purple-500/20 hover:to-indigo-500/20"
                       aria-label="Email"
                     >
-                      <MailIcon size={18} />
+                      <MailIcon size={20} />
                     </a>
                   </div>
                 </div>
@@ -224,14 +236,19 @@ const Contact: React.FC<ContactProps> = ({ contactInfo }) => {
             
             {/* Right column - Contact form */}
             <AnimateIn type="fade-in" delay={100} className="md:w-3/5">
-              <div className="bg-background rounded-lg shadow-sm p-8 border">
-                <h3 className="text-xl font-bold mb-6">Send Me a Message</h3>
+              <div className="bg-background/80 backdrop-blur-sm rounded-xl shadow-lg p-8 border border-white/10">
+                <h3 className="text-xl font-bold mb-6 relative inline-block">
+                  Send Me a Message
+                  <span className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-purple-500 to-indigo-500 rounded"></span>
+                </h3>
                 
                 {submitSuccess ? (
-                  <div className="bg-green-50 border border-green-200 text-green-700 rounded-lg p-4 mb-6 animate-fade-in">
-                    <p className="font-medium">Thank you for your message!</p>
-                    <p className="text-sm mt-1">I'll get back to you as soon as possible.</p>
-                  </div>
+                  <Alert className="bg-green-500/10 border-green-500/30 text-green-600 animate-fade-in">
+                    <AlertTitle className="text-lg font-semibold">Thank you for your message!</AlertTitle>
+                    <AlertDescription>
+                      I'll get back to you as soon as possible. Feel free to connect with me on social media in the meantime.
+                    </AlertDescription>
+                  </Alert>
                 ) : (
                   <form onSubmit={handleSubmit} className="space-y-6">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -239,14 +256,14 @@ const Contact: React.FC<ContactProps> = ({ contactInfo }) => {
                         <label htmlFor="name" className="block text-sm font-medium mb-2">
                           Name
                         </label>
-                        <input
+                        <Input
                           type="text"
                           id="name"
                           name="name"
                           required
                           value={formState.name}
                           onChange={handleChange}
-                          className={`w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-primary/50 transition-colors ${formErrors.name ? 'border-red-500 bg-red-50' : 'border-input'}`}
+                          className={`w-full transition-all duration-300 border-white/10 bg-white/5 focus:border-indigo-500 ${formErrors.name ? 'border-red-500 bg-red-500/5' : ''}`}
                           placeholder="Your name"
                         />
                         {formErrors.name && (
@@ -258,14 +275,14 @@ const Contact: React.FC<ContactProps> = ({ contactInfo }) => {
                         <label htmlFor="email" className="block text-sm font-medium mb-2">
                           Email
                         </label>
-                        <input
+                        <Input
                           type="email"
                           id="email"
                           name="email"
                           required
                           value={formState.email}
                           onChange={handleChange}
-                          className={`w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-primary/50 transition-colors ${formErrors.email ? 'border-red-500 bg-red-50' : 'border-input'}`}
+                          className={`w-full transition-all duration-300 border-white/10 bg-white/5 focus:border-indigo-500 ${formErrors.email ? 'border-red-500 bg-red-500/5' : ''}`}
                           placeholder="Your email"
                         />
                         {formErrors.email && (
@@ -278,14 +295,14 @@ const Contact: React.FC<ContactProps> = ({ contactInfo }) => {
                       <label htmlFor="subject" className="block text-sm font-medium mb-2">
                         Subject
                       </label>
-                      <input
+                      <Input
                         type="text"
                         id="subject"
                         name="subject"
                         required
                         value={formState.subject}
                         onChange={handleChange}
-                        className={`w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-primary/50 transition-colors ${formErrors.subject ? 'border-red-500 bg-red-50' : 'border-input'}`}
+                        className={`w-full transition-all duration-300 border-white/10 bg-white/5 focus:border-indigo-500 ${formErrors.subject ? 'border-red-500 bg-red-500/5' : ''}`}
                         placeholder="Subject of your message"
                       />
                       {formErrors.subject && (
@@ -304,7 +321,7 @@ const Contact: React.FC<ContactProps> = ({ contactInfo }) => {
                         value={formState.message}
                         onChange={handleChange}
                         rows={5}
-                        className={`w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-primary/50 transition-colors resize-none ${formErrors.message ? 'border-red-500 bg-red-50' : 'border-input'}`}
+                        className={`w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 transition-all duration-300 border-white/10 bg-white/5 focus:border-indigo-500 focus:ring-indigo-500/20 resize-none ${formErrors.message ? 'border-red-500 bg-red-500/5' : ''}`}
                         placeholder="Your message"
                       />
                       {formErrors.message && (
@@ -315,6 +332,7 @@ const Contact: React.FC<ContactProps> = ({ contactInfo }) => {
                     <div>
                       <Button
                         type="submit"
+                        variant="gradient"
                         size="lg"
                         disabled={isSubmitting}
                         icon={isSubmitting ? null : <SendIcon size={18} />}
