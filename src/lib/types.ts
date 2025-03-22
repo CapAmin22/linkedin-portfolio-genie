@@ -9,6 +9,7 @@ export interface Experience {
   description: string[];
   skills: string[];
   logo?: string;
+  highlight?: boolean;
 }
 
 export interface Project {
@@ -19,6 +20,8 @@ export interface Project {
   imageUrl: string;
   link?: string;
   github?: string;
+  featured?: boolean;
+  completed?: boolean;
 }
 
 export interface Skill {
@@ -36,6 +39,7 @@ export interface Education {
   location: string;
   description?: string;
   logo?: string;
+  gpa?: string;
 }
 
 export interface Certification {
@@ -43,6 +47,7 @@ export interface Certification {
   issuer: string;
   date: string;
   link?: string;
+  iconUrl?: string;
 }
 
 export interface Award {
@@ -50,6 +55,7 @@ export interface Award {
   issuer: string;
   date: string;
   description?: string;
+  highlight?: boolean;
 }
 
 export interface ContactInfo {
@@ -70,6 +76,7 @@ export interface PersonalInfo {
   avatar?: string;
   contact: ContactInfo;
   achievements?: string[];
+  availability?: 'available' | 'limited' | 'unavailable';
 }
 
 export interface FormSubmissionResponse {
