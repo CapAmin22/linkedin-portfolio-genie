@@ -127,12 +127,12 @@ const Contact: React.FC<ContactProps> = ({ contactInfo }) => {
                     <div className="bg-gradient-to-br from-blue-500/20 to-indigo-500/20 p-4 rounded-full mr-5 transition-all duration-300 group-hover:from-blue-500/30 group-hover:to-indigo-500/30">
                       <MailIcon size={22} className="text-primary" />
                     </div>
-                    <div>
+                    <div className="flex-1 overflow-hidden">
                       <h4 className="text-sm font-medium text-foreground/60 mb-1">Email</h4>
                       <a href={`mailto:${contactInfo.email}`} 
-                        className="text-foreground group-hover:text-primary transition-colors flex items-center">
+                        className="text-foreground group-hover:text-primary transition-colors flex items-center break-all">
                         {contactInfo.email}
-                        <ArrowRightIcon size={14} className="ml-1 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300" />
+                        <ArrowRightIcon size={14} className="ml-1 flex-shrink-0 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300" />
                       </a>
                     </div>
                   </div>

@@ -22,7 +22,7 @@ const About: React.FC<AboutProps> = ({ personalInfo }) => {
           <AnimateIn type="fade-in" className="md:w-2/5 mb-10 md:mb-0">
             <div className="relative">
               <img 
-                src="/lovable-uploads/5c98dae9-ee80-48f0-8cc0-66dbd895b366.png"
+                src="/lovable-uploads/Amin3 (1)"
                 alt={personalInfo.fullName}
                 className="w-full h-auto rounded-lg shadow-lg object-cover"
               />

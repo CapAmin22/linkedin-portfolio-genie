@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import Header from '@/components/Header';
 import Hero from '@/components/Hero';
@@ -15,9 +14,9 @@ import Awards from '@/components/Awards';
 
 const personalInfo: PersonalInfo = {
   fullName: "Amin Shaikh",
-  title: "Product Management | Founder | UX/UI | Ideation | Data-Driven Decision Making | Product Road-Mapping | GTM | Polymath",
+  title: "Product Management Enthusiast & Polymath",
   bio: "Product Management professional with expertise in UX/UI, ideation, and data-driven decision making.",
-  avatar: "/lovable-uploads/b3c0efc4-917f-4545-a9bc-e3ae493900f8.png",
+  avatar: "/lovable-uploads/AminPhoto PPZ1 (1) (1)",
   summary: [
     "Passionate Product Management Professional | Problem Solver | User Experience Innovator",
     "I thrive on identifying and solving real-world challenges through strategic product development. With a robust background in computer science and over three years of experience in product management and business analysis, I transform complex problems into elegant, user-centric solutions.",
@@ -28,8 +27,8 @@ const personalInfo: PersonalInfo = {
   ],
   achievements: [
     "Led cross-functional teams to deliver product features that increased user engagement by 35%",
-    "Recognized as 'Emerging Product Leader' by GrowthSchool in 2023",
-    "National Rowing Champion representing university team",
+    "Boosted retention",
+    "National Rowing Champion",
     "Speaker at Product Management Summit 2023 on 'Data-Driven Decision Making in Product Development'"
   ],
   contact: {
@@ -279,22 +278,22 @@ const awards: Award[] = [
     description: "First place in the collegiate rowing championship, representing university team in the national competition."
   },
   {
-    title: "Emerging Product Leader",
+    title: "Boosted retention",
     issuer: "GrowthSchool",
     date: "2023",
     description: "Recognized for exceptional leadership in product management and innovation."
   },
   {
-    title: "Best Product Pitch",
-    issuer: "Startup India Hackathon",
+    title: "Best client management award",
+    issuer: "Startup India",
     date: "2023",
-    description: "Won first place for the most innovative product pitch at the national hackathon."
+    description: "Won recognition for exceptional client management skills and relationship building."
   },
   {
-    title: "NCC Senior Division Certificate",
-    issuer: "National Cadet Corps",
-    date: "2020",
-    description: "Completed senior division training program with distinction, demonstrating leadership and discipline."
+    title: "Top 1% at GrowthSchool | Leadership Role From Schools to college | National Rowing Champion",
+    issuer: "Various Organizations",
+    date: "2020-2023",
+    description: "Recognized for academic excellence, leadership qualities, and athletic achievements across different organizations."
   }
 ];
 

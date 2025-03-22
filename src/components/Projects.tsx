@@ -65,8 +65,23 @@ const ProjectCard: React.FC<{ project: Project }> = ({ project }) => {
                 icon={<GithubIcon size={16} />}
                 iconPosition="right"
                 className="bg-background/80 backdrop-blur-sm"
+                target="_blank"
               >
                 Code
+              </Button>
+            )}
+            
+            {project.link && (
+              <Button
+                variant="outline"
+                size="sm"
+                href={project.link}
+                icon={<ExternalLinkIcon size={16} />}
+                iconPosition="right"
+                className="bg-background/80 backdrop-blur-sm"
+                target="_blank"
+              >
+                Live
               </Button>
             )}
           </div>
@@ -105,6 +120,9 @@ const Projects: React.FC<ProjectsProps> = ({ projects }) => {
               Portfolio
             </div>
             <h2 className="text-3xl md:text-4xl font-bold">Featured Projects</h2>
+            <p className="mt-4 text-muted-foreground max-w-2xl mx-auto">
+              A showcase of my work across product management, UX/UI design, and data analytics
+            </p>
           </div>
         </AnimateIn>
         
@@ -120,18 +138,6 @@ const Projects: React.FC<ProjectsProps> = ({ projects }) => {
             </AnimateIn>
           ))}
         </div>
-        
-        {projects.length > 6 && (
-          <AnimateIn type="fade-in" delay={600} className="text-center mt-12">
-            <Button
-              variant="outline"
-              size="lg"
-              href="#"
-            >
-              View All Projects
-            </Button>
-          </AnimateIn>
-        )}
       </div>
     </Section>
   );
