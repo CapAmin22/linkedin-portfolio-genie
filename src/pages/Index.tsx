@@ -17,6 +17,7 @@ const personalInfo: PersonalInfo = {
   fullName: "Amin Shaikh",
   title: "Product Management | Founder | UX/UI | Ideation | Data-Driven Decision Making | Product Road-Mapping | GTM | Polymath",
   bio: "Product Management professional with expertise in UX/UI, ideation, and data-driven decision making.",
+  avatar: "/lovable-uploads/b3c0efc4-917f-4545-a9bc-e3ae493900f8.png",
   summary: [
     "Passionate Product Management Professional | Problem Solver | User Experience Innovator",
     "I thrive on identifying and solving real-world challenges through strategic product development. With a robust background in computer science and over three years of experience in product management and business analysis, I transform complex problems into elegant, user-centric solutions.",

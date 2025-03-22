@@ -1,11 +1,12 @@
 
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import Section from './ui/Section';
 import { AnimateIn, StaggeredChildren } from './ui/Animation';
 import { Project } from '@/lib/types';
 import { cn } from '@/lib/utils';
 import Button from './ui/Button';
-import { ExternalLinkIcon, GithubIcon } from 'lucide-react';
+import { ExternalLinkIcon, GithubIcon, ArrowRightIcon } from 'lucide-react';
 
 interface ProjectsProps {
   projects: Project[];
@@ -46,16 +47,15 @@ const ProjectCard: React.FC<{ project: Project }> = ({ project }) => {
         {/* Hover overlay with buttons */}
         <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
           <div className="flex space-x-3">
-            {project.link && (
+            <Link to={`/project/${project.id}`}>
               <Button
                 size="sm"
-                href={project.link}
-                icon={<ExternalLinkIcon size={16} />}
+                icon={<ArrowRightIcon size={16} />}
                 iconPosition="right"
               >
-                View Project
+                View Details
               </Button>
-            )}
+            </Link>
             
             {project.github && (
               <Button
@@ -66,7 +66,7 @@ const ProjectCard: React.FC<{ project: Project }> = ({ project }) => {
                 iconPosition="right"
                 className="bg-background/80 backdrop-blur-sm"
               >
-                View Code
+                Code
               </Button>
             )}
           </div>
@@ -75,7 +75,9 @@ const ProjectCard: React.FC<{ project: Project }> = ({ project }) => {
       
       {/* Content */}
       <div className="p-5">
-        <h3 className="text-lg font-semibold mb-2">{project.title}</h3>
+        <Link to={`/project/${project.id}`} className="hover:text-primary transition-colors">
+          <h3 className="text-lg font-semibold mb-2">{project.title}</h3>
+        </Link>
         <p className="text-foreground/70 text-sm line-clamp-2 mb-4">{project.description}</p>
         
         <div className="flex flex-wrap gap-2">

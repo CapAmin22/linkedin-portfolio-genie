@@ -20,17 +20,11 @@ const Hero: React.FC<HeroProps> = ({ personalInfo }) => {
       <div className="container mx-auto px-4 py-16 md:py-20 lg:py-28 flex flex-col items-center text-center">
         <AnimateIn type="fade-in" delay={100}>
           <div className="mb-8 relative inline-block">
-            {personalInfo.avatar ? (
-              <img
-                src={personalInfo.avatar}
-                alt={personalInfo.fullName}
-                className="w-36 h-36 rounded-full object-cover border-4 border-white shadow-lg"
-              />
-            ) : (
-              <div className="w-28 h-28 md:w-36 md:h-36 rounded-full bg-secondary flex items-center justify-center text-4xl font-bold text-primary">
-                {personalInfo.fullName.split(' ')[0].charAt(0)}
-              </div>
-            )}
+            <img
+              src="/lovable-uploads/b3c0efc4-917f-4545-a9bc-e3ae493900f8.png"
+              alt={personalInfo.fullName}
+              className="w-36 h-36 rounded-full object-cover border-4 border-white shadow-lg"
+            />
             <div className="absolute -bottom-2 -right-2 w-8 h-8 bg-primary rounded-full flex items-center justify-center text-primary-foreground">
               👋
             </div>

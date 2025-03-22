@@ -21,19 +21,11 @@ const About: React.FC<AboutProps> = ({ personalInfo }) => {
           {/* Left column with image */}
           <AnimateIn type="fade-in" className="md:w-2/5 mb-10 md:mb-0">
             <div className="relative">
-              {personalInfo.avatar ? (
-                <img 
-                  src={personalInfo.avatar} 
-                  alt={personalInfo.fullName}
-                  className="w-full h-auto rounded-lg shadow-lg object-cover"
-                />
-              ) : (
-                <img 
-                  src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2"
-                  alt="Product Management"
-                  className="w-full h-auto rounded-lg shadow-lg object-cover"
-                />
-              )}
+              <img 
+                src="/lovable-uploads/5c98dae9-ee80-48f0-8cc0-66dbd895b366.png"
+                alt={personalInfo.fullName}
+                className="w-full h-auto rounded-lg shadow-lg object-cover"
+              />
               
               {/* Decorative elements */}
               <div className="absolute -top-4 -left-4 w-24 h-24 border-2 border-primary rounded-lg -z-10" />
