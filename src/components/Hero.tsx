@@ -1,7 +1,6 @@
 
 import React from 'react';
 import Button from './ui/Button';
-import { ArrowRightIcon } from 'lucide-react';
 import { AnimateIn } from './ui/Animation';
 import { PersonalInfo } from '@/lib/types';
 
@@ -58,15 +57,6 @@ const Hero: React.FC<HeroProps> = ({ personalInfo }) => {
         
         <AnimateIn type="fade-in-up" delay={500}>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button
-              size="lg"
-              href="#experience"
-              icon={<ArrowRightIcon size={20} />}
-              iconPosition="right"
-            >
-              View Experience
-            </Button>
-            
             <Button
               variant="outline"
               size="lg"

@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import Section from './ui/Section';
 import { AnimateIn } from './ui/Animation';
@@ -56,7 +55,6 @@ const Contact: React.FC<ContactProps> = ({ contactInfo }) => {
     const { name, value } = e.target;
     setFormState(prev => ({ ...prev, [name]: value }));
     
-    // Clear the error when user types
     if (formErrors[name as keyof ContactFormData]) {
       setFormErrors(prev => ({ ...prev, [name]: '' }));
     }
@@ -83,7 +81,6 @@ const Contact: React.FC<ContactProps> = ({ contactInfo }) => {
           message: ''
         });
         
-        // Reset success message after 5 seconds
         setTimeout(() => {
           setSubmitSuccess(false);
         }, 5000);
@@ -97,9 +94,8 @@ const Contact: React.FC<ContactProps> = ({ contactInfo }) => {
 
   return (
     <Section id="contact" className="py-20 md:py-28 relative overflow-hidden">
-      {/* Background elements */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden -z-10">
-        <div className="absolute -top-48 -left-48 w-96 h-96 bg-purple-500/10 rounded-full filter blur-3xl opacity-70" />
+        <div className="absolute -top-48 -left-48 w-96 h-96 bg-blue-500/10 rounded-full filter blur-3xl opacity-70" />
         <div className="absolute top-1/4 right-0 w-80 h-80 bg-indigo-500/10 rounded-full filter blur-3xl opacity-60" />
         <div className="absolute bottom-0 left-1/3 w-64 h-64 bg-blue-500/10 rounded-full filter blur-3xl opacity-60" />
       </div>
@@ -107,10 +103,10 @@ const Contact: React.FC<ContactProps> = ({ contactInfo }) => {
       <div className="container mx-auto px-4">
         <AnimateIn type="fade-in-up">
           <div className="text-center mb-16">
-            <div className="inline-block px-4 py-1 bg-gradient-to-r from-purple-500/10 to-indigo-500/10 text-primary rounded-full text-sm font-medium mb-4">
+            <div className="inline-block px-4 py-1 bg-gradient-to-r from-blue-500/10 to-indigo-500/10 text-primary rounded-full text-sm font-medium mb-4">
               Get In Touch
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent">Let's Connect</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">Let's Connect</h2>
             <p className="text-foreground/70 max-w-xl mx-auto">
               Feel free to reach out if you're looking for a collaborator, have a question, or just want to connect.
             </p>
@@ -119,17 +115,16 @@ const Contact: React.FC<ContactProps> = ({ contactInfo }) => {
         
         <div className="max-w-6xl mx-auto">
           <div className="flex flex-col md:flex-row gap-12">
-            {/* Left column - Contact info */}
             <AnimateIn type="fade-in" className="md:w-2/5">
               <div className="h-full bg-background/80 backdrop-blur-sm rounded-xl shadow-lg p-8 border border-white/10">
                 <h3 className="text-xl font-bold mb-6 relative inline-block">
                   Contact Information
-                  <span className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-purple-500 to-indigo-500 rounded"></span>
+                  <span className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 to-indigo-500 rounded"></span>
                 </h3>
                 
                 <div className="space-y-8 flex-grow">
                   <div className="flex items-start group">
-                    <div className="bg-gradient-to-br from-purple-500/20 to-indigo-500/20 p-4 rounded-full mr-5 transition-all duration-300 group-hover:from-purple-500/30 group-hover:to-indigo-500/30">
+                    <div className="bg-gradient-to-br from-blue-500/20 to-indigo-500/20 p-4 rounded-full mr-5 transition-all duration-300 group-hover:from-blue-500/30 group-hover:to-indigo-500/30">
                       <MailIcon size={22} className="text-primary" />
                     </div>
                     <div>
@@ -144,7 +139,7 @@ const Contact: React.FC<ContactProps> = ({ contactInfo }) => {
                   
                   {contactInfo.linkedin && (
                     <div className="flex items-start group">
-                      <div className="bg-gradient-to-br from-purple-500/20 to-indigo-500/20 p-4 rounded-full mr-5 transition-all duration-300 group-hover:from-purple-500/30 group-hover:to-indigo-500/30">
+                      <div className="bg-gradient-to-br from-blue-500/20 to-indigo-500/20 p-4 rounded-full mr-5 transition-all duration-300 group-hover:from-blue-500/30 group-hover:to-indigo-500/30">
                         <LinkedinIcon size={22} className="text-primary" />
                       </div>
                       <div>
@@ -164,7 +159,7 @@ const Contact: React.FC<ContactProps> = ({ contactInfo }) => {
                   
                   {contactInfo.github && (
                     <div className="flex items-start group">
-                      <div className="bg-gradient-to-br from-purple-500/20 to-indigo-500/20 p-4 rounded-full mr-5 transition-all duration-300 group-hover:from-purple-500/30 group-hover:to-indigo-500/30">
+                      <div className="bg-gradient-to-br from-blue-500/20 to-indigo-500/20 p-4 rounded-full mr-5 transition-all duration-300 group-hover:from-blue-500/30 group-hover:to-indigo-500/30">
                         <GithubIcon size={22} className="text-primary" />
                       </div>
                       <div>
@@ -184,7 +179,7 @@ const Contact: React.FC<ContactProps> = ({ contactInfo }) => {
                   
                   {contactInfo.location && (
                     <div className="flex items-start group">
-                      <div className="bg-gradient-to-br from-purple-500/20 to-indigo-500/20 p-4 rounded-full mr-5 transition-all duration-300 group-hover:from-purple-500/30 group-hover:to-indigo-500/30">
+                      <div className="bg-gradient-to-br from-blue-500/20 to-indigo-500/20 p-4 rounded-full mr-5 transition-all duration-300 group-hover:from-blue-500/30 group-hover:to-indigo-500/30">
                         <MapPinIcon size={22} className="text-primary" />
                       </div>
                       <div>
@@ -203,7 +198,7 @@ const Contact: React.FC<ContactProps> = ({ contactInfo }) => {
                         href={contactInfo.linkedin}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="bg-gradient-to-br from-purple-500/10 to-indigo-500/10 p-3 rounded-full text-foreground hover:text-primary transition-all duration-300 hover:from-purple-500/20 hover:to-indigo-500/20"
+                        className="bg-gradient-to-br from-blue-500/10 to-indigo-500/10 p-3 rounded-full text-foreground hover:text-primary transition-all duration-300 hover:from-blue-500/20 hover:to-indigo-500/20"
                         aria-label="LinkedIn"
                       >
                         <LinkedinIcon size={20} />
@@ -215,7 +210,7 @@ const Contact: React.FC<ContactProps> = ({ contactInfo }) => {
                         href={contactInfo.github}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="bg-gradient-to-br from-purple-500/10 to-indigo-500/10 p-3 rounded-full text-foreground hover:text-primary transition-all duration-300 hover:from-purple-500/20 hover:to-indigo-500/20"
+                        className="bg-gradient-to-br from-blue-500/10 to-indigo-500/10 p-3 rounded-full text-foreground hover:text-primary transition-all duration-300 hover:from-blue-500/20 hover:to-indigo-500/20"
                         aria-label="GitHub"
                       >
                         <GithubIcon size={20} />
@@ -224,7 +219,7 @@ const Contact: React.FC<ContactProps> = ({ contactInfo }) => {
                     
                     <a 
                       href={`mailto:${contactInfo.email}`}
-                      className="bg-gradient-to-br from-purple-500/10 to-indigo-500/10 p-3 rounded-full text-foreground hover:text-primary transition-all duration-300 hover:from-purple-500/20 hover:to-indigo-500/20"
+                      className="bg-gradient-to-br from-blue-500/10 to-indigo-500/10 p-3 rounded-full text-foreground hover:text-primary transition-all duration-300 hover:from-blue-500/20 hover:to-indigo-500/20"
                       aria-label="Email"
                     >
                       <MailIcon size={20} />
@@ -234,12 +229,11 @@ const Contact: React.FC<ContactProps> = ({ contactInfo }) => {
               </div>
             </AnimateIn>
             
-            {/* Right column - Contact form */}
             <AnimateIn type="fade-in" delay={100} className="md:w-3/5">
               <div className="bg-background/80 backdrop-blur-sm rounded-xl shadow-lg p-8 border border-white/10">
                 <h3 className="text-xl font-bold mb-6 relative inline-block">
                   Send Me a Message
-                  <span className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-purple-500 to-indigo-500 rounded"></span>
+                  <span className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 to-indigo-500 rounded"></span>
                 </h3>
                 
                 {submitSuccess ? (

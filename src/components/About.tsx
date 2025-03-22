@@ -97,13 +97,14 @@ const About: React.FC<AboutProps> = ({ personalInfo }) => {
               <div className="mt-8">
                 <h3 className="text-lg font-medium mb-4">Technical Toolkit:</h3>
                 <div className="flex flex-wrap gap-3">
+                  <div className="px-4 py-2 bg-secondary rounded-md text-sm font-medium">Product Strategy</div>
                   <div className="px-4 py-2 bg-secondary rounded-md text-sm font-medium">Figma</div>
                   <div className="px-4 py-2 bg-secondary rounded-md text-sm font-medium">Wireframing</div>
-                  <div className="px-4 py-2 bg-secondary rounded-md text-sm font-medium">Miro</div>
-                  <div className="px-4 py-2 bg-secondary rounded-md text-sm font-medium">Amplitude</div>
-                  <div className="px-4 py-2 bg-secondary rounded-md text-sm font-medium">Mixpanel</div>
-                  <div className="px-4 py-2 bg-secondary rounded-md text-sm font-medium">JIRA</div>
-                  <div className="px-4 py-2 bg-secondary rounded-md text-sm font-medium">Excel</div>
+                  <div className="px-4 py-2 bg-secondary rounded-md text-sm font-medium">JIRA/Confluence</div>
+                  <div className="px-4 py-2 bg-secondary rounded-md text-sm font-medium">Data Analysis</div>
+                  <div className="px-4 py-2 bg-secondary rounded-md text-sm font-medium">User Story Mapping</div>
+                  <div className="px-4 py-2 bg-secondary rounded-md text-sm font-medium">Agile/Scrum</div>
+                  <div className="px-4 py-2 bg-secondary rounded-md text-sm font-medium">KPI Tracking</div>
                 </div>
               </div>
             </AnimateIn>

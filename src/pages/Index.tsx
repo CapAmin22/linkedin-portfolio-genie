@@ -1,3 +1,4 @@
+
 import React, { useEffect } from 'react';
 import Header from '@/components/Header';
 import Hero from '@/components/Hero';
@@ -31,7 +32,7 @@ const personalInfo: PersonalInfo = {
     "Speaker at Product Management Summit 2023 on 'Data-Driven Decision Making in Product Development'"
   ],
   contact: {
-    email: "shaikhamin99@outlook.com",
+    email: "shaikhaminrehman302@outlook.com",
     phone: "+91 8329556730",
     linkedin: "https://linkedin.com/in/22amin",
     website: "www.linkedin.com/in/22amin",
