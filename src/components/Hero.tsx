@@ -50,7 +50,7 @@ const Hero: React.FC<HeroProps> = ({ personalInfo }) => {
         
         <AnimateIn type="fade-in-up" delay={400}>
           <p className="text-lg text-foreground/80 mb-10 max-w-2xl mx-auto">
-            Let's connect and create something extraordinary! A product management professional specializing in data-driven decision making and user experience innovation.
+            Let's connect and create something extraordinary!
           </p>
         </AnimateIn>
         

@@ -20,23 +20,6 @@ const groupSkillsByCategory = (skills: Skill[]) => {
   }, {} as Record<string, Skill[]>);
 };
 
-// Function to render skill level
-const SkillLevel: React.FC<{ level: number }> = ({ level }) => {
-  return (
-    <div className="flex space-x-1">
-      {Array.from({ length: 5 }).map((_, i) => (
-        <div 
-          key={i} 
-          className={cn(
-            "w-2 h-2 rounded-full",
-            i < level ? "bg-primary" : "bg-secondary"
-          )}
-        />
-      ))}
-    </div>
-  );
-};
-
 const categoryLabels: Record<string, string> = {
   'technical': 'Technical Skills',
   'soft': 'Soft Skills',
@@ -49,10 +32,10 @@ const Skills: React.FC<SkillsProps> = ({ skills }) => {
   const categories = Object.keys(groupedSkills);
   
   return (
-    <Section id="skills" className="py-20 md:py-28">
+    <Section id="skills" className="py-16 md:py-24">
       <div className="container mx-auto px-4">
         <AnimateIn type="fade-in-up">
-          <div className="text-center mb-16">
+          <div className="text-center mb-12">
             <div className="inline-block px-4 py-1 bg-primary/10 text-primary rounded-full text-sm font-medium mb-4">
               Skills
             </div>
@@ -60,31 +43,24 @@ const Skills: React.FC<SkillsProps> = ({ skills }) => {
           </div>
         </AnimateIn>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
           {categories.map((category, idx) => (
             <AnimateIn 
               key={category} 
               type="fade-in-up"
               delay={idx * 100}
-              className="bg-background rounded-lg shadow-sm p-6 border"
+              className="bg-background rounded-lg shadow-sm p-5 border"
             >
-              <h3 className="text-xl font-semibold mb-6">{categoryLabels[category] || category}</h3>
+              <h3 className="text-xl font-semibold mb-4">{categoryLabels[category] || category}</h3>
               
-              <div className="space-y-5">
+              <div className="flex flex-wrap gap-2">
                 {groupedSkills[category].map((skill) => (
-                  <div key={skill.name} className="relative">
-                    <div className="flex justify-between items-center mb-2">
-                      <span className="text-base font-medium">{skill.name}</span>
-                      <SkillLevel level={skill.level} />
-                    </div>
-                    
-                    <div className="w-full h-2 bg-secondary rounded-full overflow-hidden">
-                      <div 
-                        className="h-full bg-primary rounded-full"
-                        style={{ width: `${(skill.level / 5) * 100}%` }}
-                      />
-                    </div>
-                  </div>
+                  <span 
+                    key={skill.name}
+                    className="px-3 py-1 bg-secondary rounded text-sm font-medium"
+                  >
+                    {skill.name}
+                  </span>
                 ))}
               </div>
             </AnimateIn>

@@ -22,7 +22,7 @@ const About: React.FC<AboutProps> = ({ personalInfo }) => {
           <AnimateIn type="fade-in" className="md:w-2/5 mb-10 md:mb-0">
             <div className="relative">
               <img 
-                src={personalInfo.avatar}
+                src={personalInfo.aboutImage || personalInfo.avatar}
                 alt={personalInfo.fullName}
                 className="w-full h-auto rounded-lg shadow-lg object-cover"
                 onError={(e) => {
@@ -65,10 +65,6 @@ const About: React.FC<AboutProps> = ({ personalInfo }) => {
                     {personalInfo.bio}
                   </p>
                 )}
-                
-                <p className="text-foreground/80">
-                  Beyond work, I'm a National Rowing Champion and NCC Senior, bringing the same discipline, strategy, and passion to product management that I apply to sports and personal growth. Always eager to transform innovative ideas into impactful solutions.
-                </p>
               </div>
             </AnimateIn>
             
@@ -93,15 +89,28 @@ const About: React.FC<AboutProps> = ({ personalInfo }) => {
             <AnimateIn type="fade-in-up" delay={500}>
               <div className="mt-8">
                 <h3 className="text-lg font-medium mb-4">Technical Toolkit:</h3>
-                <div className="flex flex-wrap gap-3">
-                  <div className="px-4 py-2 bg-secondary rounded-md text-sm font-medium">Product Strategy</div>
-                  <div className="px-4 py-2 bg-secondary rounded-md text-sm font-medium">Figma</div>
-                  <div className="px-4 py-2 bg-secondary rounded-md text-sm font-medium">Wireframing</div>
-                  <div className="px-4 py-2 bg-secondary rounded-md text-sm font-medium">JIRA/Confluence</div>
-                  <div className="px-4 py-2 bg-secondary rounded-md text-sm font-medium">Data Analysis</div>
-                  <div className="px-4 py-2 bg-secondary rounded-md text-sm font-medium">User Story Mapping</div>
-                  <div className="px-4 py-2 bg-secondary rounded-md text-sm font-medium">Agile/Scrum</div>
-                  <div className="px-4 py-2 bg-secondary rounded-md text-sm font-medium">KPI Tracking</div>
+                <div className="flex flex-wrap gap-2">
+                  <div className="px-3 py-1 bg-secondary rounded-md text-sm font-medium">Product Strategy</div>
+                  <div className="px-3 py-1 bg-secondary rounded-md text-sm font-medium">Wireframing</div>
+                  <div className="px-3 py-1 bg-secondary rounded-md text-sm font-medium">Prototyping</div>
+                  <div className="px-3 py-1 bg-secondary rounded-md text-sm font-medium">Postman</div>
+                  <div className="px-3 py-1 bg-secondary rounded-md text-sm font-medium">Primary & Secondary Research</div>
+                  <div className="px-3 py-1 bg-secondary rounded-md text-sm font-medium">Brainstorming</div>
+                  <div className="px-3 py-1 bg-secondary rounded-md text-sm font-medium">API Integration</div>
+                  <div className="px-3 py-1 bg-secondary rounded-md text-sm font-medium">KPI</div>
+                  <div className="px-3 py-1 bg-secondary rounded-md text-sm font-medium">PDLC</div>
+                  <div className="px-3 py-1 bg-secondary rounded-md text-sm font-medium">Cross-Functional Collaboration</div>
+                  <div className="px-3 py-1 bg-secondary rounded-md text-sm font-medium">Figma</div>
+                  <div className="px-3 py-1 bg-secondary rounded-md text-sm font-medium">JIRA/Confluence</div>
+                  <div className="px-3 py-1 bg-secondary rounded-md text-sm font-medium">PRD</div>
+                  <div className="px-3 py-1 bg-secondary rounded-md text-sm font-medium">Agile & Scrum</div>
+                  <div className="px-3 py-1 bg-secondary rounded-md text-sm font-medium">GTM</div>
+                  <div className="px-3 py-1 bg-secondary rounded-md text-sm font-medium">Data Analysis</div>
+                  <div className="px-3 py-1 bg-secondary rounded-md text-sm font-medium">User Story Mapping</div>
+                  <div className="px-3 py-1 bg-secondary rounded-md text-sm font-medium">UX/UI</div>
+                  <div className="px-3 py-1 bg-secondary rounded-md text-sm font-medium">Product Roadmap</div>
+                  <div className="px-3 py-1 bg-secondary rounded-md text-sm font-medium">Story Telling</div>
+                  <div className="px-3 py-1 bg-secondary rounded-md text-sm font-medium">Structured Thinking</div>
                 </div>
               </div>
             </AnimateIn>

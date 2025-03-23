@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import Header from '@/components/Header';
 import Hero from '@/components/Hero';
@@ -17,20 +16,19 @@ const personalInfo: PersonalInfo = {
   fullName: "Amin Shaikh",
   title: "Product Management Enthusiast & Polymath",
   bio: "Product Management professional with expertise in UX/UI, ideation, and data-driven decision making.",
-  avatar: "/lovable-uploads/AminPhoto_PPZ1__1___1_",
+  avatar: "/lovable-uploads/AminPhoto PPZ1 (1) (1)",
+  aboutImage: "/lovable-uploads/Amin3 (1)",
   summary: [
-    "Passionate Product Management Professional | Problem Solver | User Experience Innovator",
-    "I thrive on identifying and solving real-world challenges through strategic product development. With a robust background in computer science and over three years of experience in product management and business analysis, I transform complex problems into elegant, user-centric solutions.",
-    "My professional journey spans diverse ecosystems—from B2B to B2C start-ups—where I've consistently demonstrated:",
-    "Strategic Vision: Pioneering projects like 22POULTRY, an innovative open-source information platform for the poultry industry, showcasing my ability to identify and address market gaps.",
-    "Cross-Functional Excellence: Proven track record of collaborating with global teams, aligning stakeholders, and driving product vision across different time zones and technological landscapes.",
-    "Data-Driven Approach: Leveraging advanced analytics, user research, and tools like Google Analytics, Mixpanel, CleverTap, and Amplitude to make informed product decisions and track performance metrics."
+    "I'm Amin Shaikh, a passionate Product Manager with a strong background in product integration, data analytics, and user-centric design. With over three years of experience, I specialize in leveraging technology, UX/UI insights, and market research to build impactful digital solutions.",
+    "My journey spans founding 22Poultry, optimizing user engagement at Shop Online New York, and leading AI-driven profile matching at TheEndorse. I've worked on API integrations, CI/CD pipelines, and payment processing, ensuring seamless cross-functional collaboration between engineering, design, and business teams.",
+    "I thrive on solving complex problems, refining workflows, and delivering data-driven decisions that enhance product efficiency and user experience. My work is driven by a passion for innovation, emerging technologies, and continuous learning. Let's connect and build something great!"
   ],
   achievements: [
-    "Led cross-functional teams to deliver product features that increased user engagement by 35%",
-    "Boosted retention",
-    "National Rowing Champion",
-    "Speaker at Product Management Summit 2023 on 'Data-Driven Decision Making in Product Development'"
+    "Founded and scaled 22Poultry, a SaaS platform delivering real-time poultry stats, bank loan solutions, training, and market insights that transform traditional industries.",
+    "Led cross-functional teams at Helpy Moto to integrate advanced payment and service solutions, reducing refund processing errors by 10% and enhancing system reliability.",
+    "Drove user-centric product development at Shop Online New York and TheEndorse by leveraging data analytics, UX/UI insights, and agile methodologies to boost engagement and retention.",
+    "Recognized as an innovative leader with a strong track record in integration and data-driven decision making.",
+    "Passionate about emerging technologies, AI/ML, and fintech, with a commitment to continuous learning and impactful product development."
   ],
   contact: {
     email: "shaikhaminrehman302@outlook.com",
@@ -280,21 +278,21 @@ const awards: Award[] = [
   },
   {
     title: "Boosted retention",
-    issuer: "GrowthSchool",
+    issuer: "Shop Online New York",
     date: "2023",
-    description: "Recognized for exceptional leadership in product management and innovation."
+    description: "Conducted in-depth customer journey and funnel analyses that boosted retention by 15% and reduced churn by 10% at Shop Online New York"
   },
   {
     title: "Best client management award",
-    issuer: "Startup India",
-    date: "2023",
+    issuer: "Banao Tech",
+    date: "",
     description: "Won recognition for exceptional client management skills and relationship building."
   },
   {
-    title: "Top 1% at GrowthSchool | Leadership Role From Schools to college | National Rowing Champion",
-    issuer: "Various Organizations",
-    date: "2020-2023",
-    description: "Recognized for academic excellence, leadership qualities, and athletic achievements across different organizations."
+    title: "Top 1% at GrowthSchool",
+    issuer: "GrowthSchool",
+    date: "",
+    description: "Recognized for academic excellence and outstanding performance."
   }
 ];
 

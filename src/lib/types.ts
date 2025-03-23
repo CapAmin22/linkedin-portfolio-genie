@@ -74,6 +74,7 @@ export interface PersonalInfo {
   bio: string;
   summary?: string[];
   avatar?: string;
+  aboutImage?: string;
   contact: ContactInfo;
   achievements?: string[];
   availability?: 'available' | 'limited' | 'unavailable';
