@@ -1,3 +1,4 @@
+
 import React, { useEffect } from 'react';
 import Header from '@/components/Header';
 import Hero from '@/components/Hero';
@@ -16,7 +17,7 @@ const personalInfo: PersonalInfo = {
   fullName: "Amin Shaikh",
   title: "Product Management Enthusiast & Polymath",
   bio: "Product Management professional with expertise in UX/UI, ideation, and data-driven decision making.",
-  avatar: "/lovable-uploads/AminPhoto PPZ1 (1) (1)",
+  avatar: "/lovable-uploads/AminPhoto_PPZ1__1___1_",
   summary: [
     "Passionate Product Management Professional | Problem Solver | User Experience Innovator",
     "I thrive on identifying and solving real-world challenges through strategic product development. With a robust background in computer science and over three years of experience in product management and business analysis, I transform complex problems into elegant, user-centric solutions.",

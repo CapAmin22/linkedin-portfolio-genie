@@ -21,7 +21,7 @@ const Hero: React.FC<HeroProps> = ({ personalInfo }) => {
         <AnimateIn type="fade-in" delay={100}>
           <div className="mb-8 relative inline-block">
             <img
-              src="/lovable-uploads/AminPhoto_PPZ1__1___1_"
+              src={personalInfo.avatar}
               alt={personalInfo.fullName}
               className="w-36 h-36 rounded-full object-cover border-4 border-white shadow-lg"
               onError={(e) => {

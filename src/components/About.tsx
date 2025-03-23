@@ -22,9 +22,14 @@ const About: React.FC<AboutProps> = ({ personalInfo }) => {
           <AnimateIn type="fade-in" className="md:w-2/5 mb-10 md:mb-0">
             <div className="relative">
               <img 
-                src="/lovable-uploads/Amin3 (1)"
+                src={personalInfo.avatar}
                 alt={personalInfo.fullName}
                 className="w-full h-auto rounded-lg shadow-lg object-cover"
+                onError={(e) => {
+                  const target = e.target as HTMLImageElement;
+                  target.onerror = null;
+                  target.src = "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=80";
+                }}
               />
               
               {/* Decorative elements */}
