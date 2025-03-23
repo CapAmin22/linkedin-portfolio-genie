@@ -1,3 +1,4 @@
+
 import React from 'react';
 import Button from './ui/Button';
 import { AnimateIn } from './ui/Animation';
@@ -20,9 +21,14 @@ const Hero: React.FC<HeroProps> = ({ personalInfo }) => {
         <AnimateIn type="fade-in" delay={100}>
           <div className="mb-8 relative inline-block">
             <img
-              src="/lovable-uploads/AminPhoto PPZ1 (1) (1)"
+              src="/lovable-uploads/AminPhoto_PPZ1__1___1_"
               alt={personalInfo.fullName}
               className="w-36 h-36 rounded-full object-cover border-4 border-white shadow-lg"
+              onError={(e) => {
+                const target = e.target as HTMLImageElement;
+                target.onerror = null;
+                target.src = "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=facearea&facepad=2&w=256&h=256&q=80";
+              }}
             />
             <div className="absolute -bottom-2 -right-2 w-8 h-8 bg-primary rounded-full flex items-center justify-center text-primary-foreground">
               👋
