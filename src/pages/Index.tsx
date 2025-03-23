@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import Header from '@/components/Header';
 import Hero from '@/components/Hero';
@@ -254,29 +253,21 @@ const certifications: Certification[] = [
     issuer: "IIBA, LinkedIn & Microsoft",
     date: "2023",
     description: "These certifications in BA, DA, Communication, and Project management gave me overall Knowledge and Skills, which is foundation for Good PM like time management, communication, requirement gathering, data analysis, and lot more other crucial skills."
-  },
-  {
-    name: "Power Essential in Business Analysis",
-    issuer: "Microsoft and LinkedIn",
-    date: "2023"
-  },
-  {
-    name: "Business Analysis Essentials",
-    issuer: "LinkedIn",
-    date: "2023"
-  },
-  {
-    name: "UX Studies",
-    issuer: "Udemy",
-    date: "2022"
   }
 ];
 
 const awards: Award[] = [
   {
+    title: "Reducing refund processing errors",
+    issuer: "Helpy Moto",
+    date: "",
+    description: "Developed and implemented an automated API testing protocol using Postman that identified integration glitches early, reducing refund processing errors by 10% and enhancing overall system reliability at Helpy Moto.",
+    highlight: true
+  },
+  {
     title: "Boosted retention",
     issuer: "Shop Online New York",
-    date: "2023",
+    date: "",
     description: "Conducted in-depth customer journey and funnel analyses that boosted retention by 15% and reduced churn by 10% at Shop Online New York"
   },
   {
