@@ -22,31 +22,38 @@ const Certifications: React.FC<CertificationsProps> = ({ certifications }) => {
           </div>
         </AnimateIn>
         
-        <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="max-w-4xl mx-auto">
           {certifications.map((cert, index) => (
             <AnimateIn 
               key={index} 
               type="fade-in-up" 
               delay={index * 100}
             >
-              <div className="bg-background rounded-lg shadow-sm p-5 border h-full">
-                <div className="flex items-start gap-4">
-                  <div className="bg-primary/10 p-3 rounded-full text-primary">
+              <div className="bg-background rounded-lg shadow-sm p-5 border mb-6">
+                <div className="flex flex-col md:flex-row gap-4">
+                  <div className="bg-primary/10 p-3 rounded-full text-primary h-fit">
                     <AwardIcon size={20} />
                   </div>
-                  <div>
-                    <h3 className="text-lg font-semibold mb-1">{cert.name}</h3>
-                    <div className="flex flex-col md:flex-row md:items-center gap-2 text-sm">
-                      <span className="text-foreground/70">{cert.issuer}</span>
-                      <span className="hidden md:block text-foreground/50">•</span>
-                      <span className="text-foreground/70">{cert.date}</span>
+                  <div className="flex-1">
+                    <h3 className="text-lg font-semibold mb-1 text-primary">{cert.name}</h3>
+                    <div className="flex flex-col md:flex-row md:items-center gap-2 text-sm mb-2">
+                      <span className="text-foreground/70 font-medium">{cert.issuer}</span>
+                      {cert.date && (
+                        <>
+                          <span className="hidden md:block text-foreground/50">•</span>
+                          <span className="text-foreground/70">{cert.date}</span>
+                        </>
+                      )}
                     </div>
+                    {cert.description && (
+                      <p className="text-foreground/80 text-sm mt-2">{cert.description}</p>
+                    )}
                     {cert.link && (
                       <a 
                         href={cert.link} 
                         target="_blank" 
                         rel="noopener noreferrer"
-                        className="text-primary text-sm mt-2 inline-block hover:underline"
+                        className="text-primary text-sm mt-3 inline-block hover:underline"
                       >
                         Show credential
                       </a>

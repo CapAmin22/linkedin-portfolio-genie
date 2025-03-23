@@ -1,3 +1,4 @@
+
 import React, { useEffect } from 'react';
 import Header from '@/components/Header';
 import Hero from '@/components/Hero';
@@ -243,6 +244,18 @@ const education: EducationType[] = [
 
 const certifications: Certification[] = [
   {
+    name: "Aha! PM Certification",
+    issuer: "Aha.io",
+    date: "2023",
+    description: "Strengthened my skills in identifying ideal customers and ensuring product-market fit. Building product strategies that match vision and market needs, and designing effective acquisition funnels and measuring customer satisfaction."
+  },
+  {
+    name: "Project Management & Business Analysis Certification",
+    issuer: "IIBA, LinkedIn & Microsoft",
+    date: "2023",
+    description: "These certifications in BA, DA, Communication, and Project management gave me overall Knowledge and Skills, which is foundation for Good PM like time management, communication, requirement gathering, data analysis, and lot more other crucial skills."
+  },
+  {
     name: "Power Essential in Business Analysis",
     issuer: "Microsoft and LinkedIn",
     date: "2023"
@@ -253,16 +266,6 @@ const certifications: Certification[] = [
     date: "2023"
   },
   {
-    name: "Business Benefits Realization Foundations",
-    issuer: "LinkedIn",
-    date: "2023"
-  },
-  {
-    name: "Data Modeling For Power BI",
-    issuer: "Microsoft",
-    date: "2022"
-  },
-  {
     name: "UX Studies",
     issuer: "Udemy",
     date: "2022"
@@ -270,12 +273,6 @@ const certifications: Certification[] = [
 ];
 
 const awards: Award[] = [
-  {
-    title: "National Rowing Championship",
-    issuer: "Indian Rowing Federation",
-    date: "2022",
-    description: "First place in the collegiate rowing championship, representing university team in the national competition."
-  },
   {
     title: "Boosted retention",
     issuer: "Shop Online New York",

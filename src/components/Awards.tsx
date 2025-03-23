@@ -62,8 +62,12 @@ const Awards: React.FC<AwardsProps> = ({ awards }) => {
                     </h3>
                     <div className="flex flex-col md:flex-row md:items-center gap-2 text-sm mb-3">
                       <span className="text-foreground/70 font-medium">{award.issuer}</span>
-                      <span className="hidden md:block text-foreground/50">•</span>
-                      <span className="text-foreground/70">{award.date}</span>
+                      {award.date && (
+                        <>
+                          <span className="hidden md:block text-foreground/50">•</span>
+                          <span className="text-foreground/70">{award.date}</span>
+                        </>
+                      )}
                     </div>
                     {award.description && (
                       <p className="text-foreground/80 text-sm md:text-base">{award.description}</p>

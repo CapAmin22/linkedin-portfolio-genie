@@ -1,7 +1,7 @@
 
 import React from 'react';
 import Section from './ui/Section';
-import { AnimateIn, StaggeredChildren } from './ui/Animation';
+import { AnimateIn } from './ui/Animation';
 import { Skill } from '@/lib/types';
 import { cn } from '@/lib/utils';
 
@@ -32,10 +32,10 @@ const Skills: React.FC<SkillsProps> = ({ skills }) => {
   const categories = Object.keys(groupedSkills);
   
   return (
-    <Section id="skills" className="py-16 md:py-24">
+    <Section id="skills" className="py-12 md:py-16">
       <div className="container mx-auto px-4">
         <AnimateIn type="fade-in-up">
-          <div className="text-center mb-12">
+          <div className="text-center mb-8">
             <div className="inline-block px-4 py-1 bg-primary/10 text-primary rounded-full text-sm font-medium mb-4">
               Skills
             </div>
@@ -51,7 +51,7 @@ const Skills: React.FC<SkillsProps> = ({ skills }) => {
               delay={idx * 100}
               className="bg-background rounded-lg shadow-sm p-5 border"
             >
-              <h3 className="text-xl font-semibold mb-4">{categoryLabels[category] || category}</h3>
+              <h3 className="text-xl font-semibold mb-3">{categoryLabels[category] || category}</h3>
               
               <div className="flex flex-wrap gap-2">
                 {groupedSkills[category].map((skill) => (

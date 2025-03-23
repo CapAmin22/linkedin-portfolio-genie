@@ -48,6 +48,7 @@ export interface Certification {
   date: string;
   link?: string;
   iconUrl?: string;
+  description?: string;
 }
 
 export interface Award {
