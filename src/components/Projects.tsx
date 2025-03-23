@@ -65,7 +65,6 @@ const ProjectCard: React.FC<{ project: Project }> = ({ project }) => {
                 icon={<GithubIcon size={16} />}
                 iconPosition="right"
                 className="bg-background/80 backdrop-blur-sm"
-                target="_blank"
               >
                 Code
               </Button>
@@ -79,7 +78,6 @@ const ProjectCard: React.FC<{ project: Project }> = ({ project }) => {
                 icon={<ExternalLinkIcon size={16} />}
                 iconPosition="right"
                 className="bg-background/80 backdrop-blur-sm"
-                target="_blank"
               >
                 Live
               </Button>
