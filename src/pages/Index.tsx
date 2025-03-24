@@ -30,9 +30,9 @@ const BackgroundSection: React.FC<{
   bgClass: string;
 }> = ({ children, bgClass }) => (
   <div className={`relative py-12 ${bgClass}`}>
-    <div className="absolute top-0 left-0 w-full h-24 bg-gradient-to-b from-background to-transparent"></div>
+    <div className="absolute top-0 left-0 w-full h-24 bg-gradient-to-b from-[#05061f] to-transparent"></div>
     {children}
-    <div className="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-t from-background to-transparent"></div>
+    <div className="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-t from-[#05061f] to-transparent"></div>
   </div>
 );
 
@@ -59,20 +59,20 @@ const Index: React.FC = () => {
   }, []);
   
   return (
-    <div className="min-h-screen bg-background antialiased">
+    <div className="min-h-screen night-sky-with-stars text-white antialiased">
       <Header />
       <main>
         <Hero personalInfo={personalInfo} />
         <About personalInfo={personalInfo} />
         
-        <BackgroundSection bgClass="bg-secondary/10">
+        <BackgroundSection bgClass="bg-[#0e1155]/30">
           <Experience experiences={experiences} />
           <Projects projects={projects} />
         </BackgroundSection>
         
         <Skills skills={skills} />
         
-        <BackgroundSection bgClass="bg-secondary/20">
+        <BackgroundSection bgClass="bg-[#0e1155]/40">
           <EducationSection education={education} />
           <Certifications certifications={certifications} />
         </BackgroundSection>

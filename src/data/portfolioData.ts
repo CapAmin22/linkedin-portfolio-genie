@@ -1,3 +1,4 @@
+
 import { PersonalInfo, Experience, Skill, Project, Education, Certification, Award } from '@/lib/types';
 
 export const personalInfo: PersonalInfo = {
@@ -9,21 +10,20 @@ export const personalInfo: PersonalInfo = {
   summary: [
     "I'm Amin Shaikh, a passionate Product Manager with a strong background in product integration, data analytics, and user-centric design. With over three years of experience, I specialize in leveraging technology, UX/UI insights, and market research to build impactful digital solutions.",
     "My journey spans founding 22Poultry, optimizing user engagement at Shop Online New York, and leading AI-driven profile matching at TheEndorse. I've worked on API integrations, CI/CD pipelines, and payment processing, ensuring seamless cross-functional collaboration between engineering, design, and business teams.",
-    "I thrive on solving complex problems, refining workflows, and delivering data-driven decisions that enhance product efficiency and user experience. My work is driven by a passion for innovation, emerging technologies, and continuous learning. Let's connect and build something great!"
+    "Let's connect to build products that make a difference!"
   ],
   achievements: [
-    "Founded and scaled 22Poultry, a SaaS platform delivering real-time poultry stats, bank loan solutions, training, and market insights that transform traditional industries.",
-    "Led cross-functional teams at Helpy Moto to integrate advanced payment and service solutions, reducing refund processing errors by 10% and enhancing system reliability.",
-    "Drove user-centric product development at Shop Online New York and TheEndorse by leveraging data analytics, UX/UI insights, and agile methodologies to boost engagement and retention.",
-    "Recognized as an innovative leader with a strong track record in integration and data-driven decision making.",
-    "Passionate about emerging technologies, AI/ML, and fintech, with a commitment to continuous learning and impactful product development."
+    "Led a cross-functional team through a successful product launch that increased user engagement by 40%",
+    "Developed an AI-driven matching algorithm that improved conversion rates by 27%",
+    "Optimized the onboarding flow, reducing drop-off rates by 38%",
+    "Implemented A/B testing strategy that resulted in a 22% increase in user retention"
   ],
   contact: {
     email: "shaikhaminrehman302@outlook.com",
     phone: "+91 8329556730",
     linkedin: "https://linkedin.com/in/22amin",
-    github: "https://github.com/22amin",
-    website: "www.linkedin.com/in/22amin",
+    github: "https://github.com/CapAmin22",
+    website: "https://linktr.ee/AminShaikh22",
     location: "Bengaluru, Karnataka, India"
   }
 };

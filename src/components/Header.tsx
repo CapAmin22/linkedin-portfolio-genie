@@ -68,13 +68,13 @@ const Header: React.FC = () => {
     <header 
       className={cn(
         'fixed top-0 left-0 w-full z-50 transition-all duration-300',
-        isScrolled ? 'py-3 glass-effect shadow-sm' : 'py-5 bg-transparent'
+        isScrolled ? 'py-3 bg-[#05061f]/80 backdrop-blur-md shadow-lg' : 'py-5 bg-transparent'
       )}
     >
       <div className="container mx-auto px-4 flex items-center justify-between">
         <a 
           href="#" 
-          className="text-xl font-semibold transition-opacity hover:opacity-80"
+          className="text-xl font-semibold text-white transition-opacity hover:opacity-80"
           onClick={(e) => handleNavClick(e, '#')}
         >
           Portfolio
@@ -89,7 +89,7 @@ const Header: React.FC = () => {
                   onClick={(e) => handleNavClick(e, item.href)}
                   className={cn(
                     'text-sm font-medium transition-all duration-300 hover:text-primary/90 relative px-1 py-2',
-                    activeSection === item.href.substring(1) ? 'text-primary' : 'text-foreground/80'
+                    activeSection === item.href.substring(1) ? 'text-primary' : 'text-white/80'
                   )}
                 >
                   {item.title}
@@ -108,6 +108,7 @@ const Header: React.FC = () => {
             size="sm"
             onClick={() => {}}
             aria-label="Toggle menu"
+            className="text-white"
           >
             Menu
           </Button>

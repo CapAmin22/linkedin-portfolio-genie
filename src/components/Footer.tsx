@@ -16,12 +16,12 @@ const Footer: React.FC<FooterProps> = ({ contactInfo, fullName }) => {
   };
 
   return (
-    <footer className="bg-background border-t">
+    <footer className="bg-[#05061f] border-t border-white/10">
       <div className="container mx-auto px-4 py-12">
         <div className="flex flex-col md:flex-row items-center justify-between mb-8">
           <div className="mb-4 md:mb-0">
-            <h2 className="text-xl font-bold">{fullName}</h2>
-            <p className="text-sm text-foreground/70 mt-1">Portfolio & Professional Profile</p>
+            <h2 className="text-xl font-bold text-white">{fullName}</h2>
+            <p className="text-sm text-white/70 mt-1">Portfolio & Professional Profile</p>
           </div>
           
           <div className="flex space-x-6">
@@ -30,7 +30,7 @@ const Footer: React.FC<FooterProps> = ({ contactInfo, fullName }) => {
                 href={contactInfo.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-foreground/70 hover:text-primary transition-colors"
+                className="text-white/70 hover:text-primary transition-colors"
                 aria-label="GitHub"
               >
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -44,7 +44,7 @@ const Footer: React.FC<FooterProps> = ({ contactInfo, fullName }) => {
                 href={contactInfo.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-foreground/70 hover:text-primary transition-colors"
+                className="text-white/70 hover:text-primary transition-colors"
                 aria-label="LinkedIn"
               >
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -54,8 +54,20 @@ const Footer: React.FC<FooterProps> = ({ contactInfo, fullName }) => {
             )}
             
             <a 
+              href={contactInfo.website}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white/70 hover:text-primary transition-colors"
+              aria-label="Linktree"
+            >
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
+              </svg>
+            </a>
+            
+            <a 
               href={`mailto:${contactInfo.email}`}
-              className="text-foreground/70 hover:text-primary transition-colors"
+              className="text-white/70 hover:text-primary transition-colors"
               aria-label="Email"
             >
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -65,15 +77,15 @@ const Footer: React.FC<FooterProps> = ({ contactInfo, fullName }) => {
           </div>
         </div>
         
-        <div className="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-gray-200">
-          <p className="text-sm text-foreground/60 mb-4 md:mb-0">
+        <div className="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-white/10">
+          <p className="text-sm text-white/60 mb-4 md:mb-0">
             &copy; {currentYear} {fullName}. All rights reserved.
           </p>
           
           <div className="flex items-center space-x-8">
             <button 
               onClick={scrollToTop}
-              className="inline-flex items-center text-sm text-foreground/60 hover:text-primary transition-colors"
+              className="inline-flex items-center text-sm text-white/60 hover:text-primary transition-colors"
             >
               <span className="mr-2">Back to top</span>
               <ArrowUpIcon size={16} />
