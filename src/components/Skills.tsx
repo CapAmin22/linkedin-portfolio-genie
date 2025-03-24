@@ -4,6 +4,8 @@ import Section from './ui/Section';
 import { AnimateIn } from './ui/Animation';
 import { Skill } from '@/lib/types';
 import { cn } from '@/lib/utils';
+import { Progress } from './ui/progress';
+import { Star, StarHalf, StarOff } from 'lucide-react';
 
 interface SkillsProps {
   skills: Skill[];
@@ -25,6 +27,25 @@ const categoryLabels: Record<string, string> = {
   'soft': 'Soft Skills',
   'language': 'Languages',
   'tool': 'Tools & Software'
+};
+
+// Component to render stars based on skill level
+const SkillLevel: React.FC<{ level: number }> = ({ level }) => {
+  const fullStars = Math.floor(level);
+  const hasHalfStar = level % 1 >= 0.5;
+  const emptyStars = 5 - fullStars - (hasHalfStar ? 1 : 0);
+  
+  return (
+    <div className="flex">
+      {[...Array(fullStars)].map((_, i) => (
+        <Star key={`full-${i}`} className="w-3.5 h-3.5 text-primary" fill="currentColor" />
+      ))}
+      {hasHalfStar && <StarHalf className="w-3.5 h-3.5 text-primary" fill="currentColor" />}
+      {[...Array(emptyStars)].map((_, i) => (
+        <StarOff key={`empty-${i}`} className="w-3.5 h-3.5 text-muted-foreground" />
+      ))}
+    </div>
+  );
 };
 
 const Skills: React.FC<SkillsProps> = ({ skills }) => {
@@ -53,14 +74,12 @@ const Skills: React.FC<SkillsProps> = ({ skills }) => {
             >
               <h3 className="text-xl font-semibold mb-3">{categoryLabels[category] || category}</h3>
               
-              <div className="flex flex-wrap gap-2">
+              <div className="space-y-3">
                 {groupedSkills[category].map((skill) => (
-                  <span 
-                    key={skill.name}
-                    className="px-3 py-1 bg-secondary rounded text-sm font-medium"
-                  >
-                    {skill.name}
-                  </span>
+                  <div key={skill.name} className="flex items-center justify-between">
+                    <span className="text-sm font-medium">{skill.name}</span>
+                    <SkillLevel level={skill.level} />
+                  </div>
                 ))}
               </div>
             </AnimateIn>
