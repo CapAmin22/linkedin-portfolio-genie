@@ -43,6 +43,19 @@ const Index: React.FC = () => {
   useEffect(() => {
     // Set page title
     document.title = `${personalInfo.fullName} | Product Manager Portfolio`;
+    
+    // Preload critical images
+    const imagesToPreload = [
+      personalInfo.avatar,
+      personalInfo.aboutImage
+    ];
+    
+    imagesToPreload.forEach(imageUrl => {
+      if (imageUrl) {
+        const img = new Image();
+        img.src = imageUrl;
+      }
+    });
   }, []);
   
   return (

@@ -21,7 +21,7 @@ const Hero: React.FC<HeroProps> = ({ personalInfo }) => {
         <AnimateIn type="fade-in" delay={100}>
           <div className="mb-8 relative inline-block">
             <img
-              src="/lovable-uploads/AminPhoto PPZ1 (1) (1)"
+              src="/lovable-uploads/39dcf0be-a2ad-4b77-8166-89c29cd8a6ff.png"
               alt={personalInfo.fullName}
               className="w-36 h-36 rounded-full object-cover border-4 border-white shadow-lg"
               onError={(e) => {
@@ -50,12 +50,19 @@ const Hero: React.FC<HeroProps> = ({ personalInfo }) => {
         
         <AnimateIn type="fade-in-up" delay={400}>
           <p className="text-lg text-foreground/80 mb-10 max-w-2xl mx-auto">
-            Let's connect and create something extraordinary!
+            Turning Ideas into Impactful Digital Solutions
           </p>
         </AnimateIn>
         
         <AnimateIn type="fade-in-up" delay={500}>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button
+              variant="default"
+              size="lg"
+              href="#projects"
+            >
+              View Projects
+            </Button>
             <Button
               variant="outline"
               size="lg"

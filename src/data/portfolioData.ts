@@ -1,12 +1,11 @@
-
 import { PersonalInfo, Experience, Skill, Project, Education, Certification, Award } from '@/lib/types';
 
 export const personalInfo: PersonalInfo = {
   fullName: "Amin Shaikh",
   title: "Product Management Enthusiast & Polymath",
   bio: "Product Management professional with expertise in UX/UI, ideation, and data-driven decision making.",
-  avatar: "/lovable-uploads/AminPhoto PPZ1 (1) (1)",
-  aboutImage: "/lovable-uploads/Amin3 (1)",
+  avatar: "/lovable-uploads/39dcf0be-a2ad-4b77-8166-89c29cd8a6ff.png",
+  aboutImage: "/lovable-uploads/af6ecf3e-1241-467d-b89d-8f8b3fa814cc.png",
   summary: [
     "I'm Amin Shaikh, a passionate Product Manager with a strong background in product integration, data analytics, and user-centric design. With over three years of experience, I specialize in leveraging technology, UX/UI insights, and market research to build impactful digital solutions.",
     "My journey spans founding 22Poultry, optimizing user engagement at Shop Online New York, and leading AI-driven profile matching at TheEndorse. I've worked on API integrations, CI/CD pipelines, and payment processing, ensuring seamless cross-functional collaboration between engineering, design, and business teams.",
@@ -23,6 +22,7 @@ export const personalInfo: PersonalInfo = {
     email: "shaikhaminrehman302@outlook.com",
     phone: "+91 8329556730",
     linkedin: "https://linkedin.com/in/22amin",
+    github: "https://github.com/22amin",
     website: "www.linkedin.com/in/22amin",
     location: "Bengaluru, Karnataka, India"
   }
@@ -272,3 +272,4 @@ export const awards: Award[] = [
     description: "Recognized for academic excellence and outstanding performance."
   }
 ];
+
