@@ -1,9 +1,13 @@
 
 import React from 'react';
 
-const ContactBackground: React.FC = () => {
+interface ContactBackgroundProps {
+  className?: string;
+}
+
+const ContactBackground: React.FC<ContactBackgroundProps> = ({ className }) => {
   return (
-    <div className="absolute top-0 left-0 w-full h-full overflow-hidden -z-10">
+    <div className={`absolute top-0 left-0 w-full h-full overflow-hidden -z-10 ${className || ''}`}>
       <div className="absolute -top-48 -left-48 w-96 h-96 bg-blue-500/10 rounded-full filter blur-3xl opacity-70" />
       <div className="absolute top-1/4 right-0 w-80 h-80 bg-indigo-500/10 rounded-full filter blur-3xl opacity-60" />
       <div className="absolute bottom-0 left-1/3 w-64 h-64 bg-blue-500/10 rounded-full filter blur-3xl opacity-60" />

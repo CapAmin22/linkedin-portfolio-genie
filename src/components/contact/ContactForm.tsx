@@ -1,12 +1,11 @@
 
 import React, { useState } from 'react';
 import { ContactFormData, ContactService } from '@/lib/services/contact-service';
-import { Input } from '../ui/input';
-import { Alert, AlertDescription, AlertTitle } from '../ui/alert';
 import Button from '../ui/Button';
 import { SendIcon } from 'lucide-react';
 import { AnimateIn } from '../ui/Animation';
-import { Textarea } from '../ui/textarea';
+import FormField from './FormField';
+import SuccessMessage from './SuccessMessage';
 
 const initialFormState: ContactFormData = {
   name: '',
@@ -93,91 +92,56 @@ const ContactForm: React.FC = () => {
         </h3>
         
         {submitSuccess ? (
-          <Alert className="bg-green-500/10 border-green-500/30 text-green-600 animate-fade-in">
-            <AlertTitle className="text-lg font-semibold">Thank you for your message!</AlertTitle>
-            <AlertDescription>
-              I'll get back to you as soon as possible. Feel free to connect with me on social media in the meantime.
-            </AlertDescription>
-          </Alert>
+          <SuccessMessage />
         ) : (
           <form onSubmit={handleSubmit} className="space-y-6">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div>
-                <label htmlFor="name" className="block text-sm font-medium mb-2">
-                  Name
-                </label>
-                <Input
-                  type="text"
-                  id="name"
-                  name="name"
-                  required
-                  value={formState.name}
-                  onChange={handleChange}
-                  className={`w-full transition-all duration-300 border-white/10 bg-white/5 focus:border-indigo-500 ${formErrors.name ? 'border-red-500 bg-red-500/5' : ''}`}
-                  placeholder="Your name"
-                />
-                {formErrors.name && (
-                  <p className="text-red-500 text-xs mt-1">{formErrors.name}</p>
-                )}
-              </div>
+              <FormField
+                id="name"
+                name="name"
+                label="Name"
+                required
+                value={formState.name}
+                onChange={handleChange}
+                error={formErrors.name}
+                placeholder="Your name"
+              />
               
-              <div>
-                <label htmlFor="email" className="block text-sm font-medium mb-2">
-                  Email
-                </label>
-                <Input
-                  type="email"
-                  id="email"
-                  name="email"
-                  required
-                  value={formState.email}
-                  onChange={handleChange}
-                  className={`w-full transition-all duration-300 border-white/10 bg-white/5 focus:border-indigo-500 ${formErrors.email ? 'border-red-500 bg-red-500/5' : ''}`}
-                  placeholder="Your email"
-                />
-                {formErrors.email && (
-                  <p className="text-red-500 text-xs mt-1">{formErrors.email}</p>
-                )}
-              </div>
+              <FormField
+                id="email"
+                name="email"
+                label="Email"
+                type="email"
+                required
+                value={formState.email}
+                onChange={handleChange}
+                error={formErrors.email}
+                placeholder="Your email"
+              />
             </div>
             
-            <div>
-              <label htmlFor="subject" className="block text-sm font-medium mb-2">
-                Subject
-              </label>
-              <Input
-                type="text"
-                id="subject"
-                name="subject"
-                required
-                value={formState.subject}
-                onChange={handleChange}
-                className={`w-full transition-all duration-300 border-white/10 bg-white/5 focus:border-indigo-500 ${formErrors.subject ? 'border-red-500 bg-red-500/5' : ''}`}
-                placeholder="Subject of your message"
-              />
-              {formErrors.subject && (
-                <p className="text-red-500 text-xs mt-1">{formErrors.subject}</p>
-              )}
-            </div>
+            <FormField
+              id="subject"
+              name="subject"
+              label="Subject"
+              required
+              value={formState.subject}
+              onChange={handleChange}
+              error={formErrors.subject}
+              placeholder="Subject of your message"
+            />
             
-            <div>
-              <label htmlFor="message" className="block text-sm font-medium mb-2">
-                Message
-              </label>
-              <Textarea
-                id="message"
-                name="message"
-                required
-                value={formState.message}
-                onChange={handleChange}
-                rows={5}
-                className={`w-full transition-all duration-300 border-white/10 bg-white/5 focus:border-indigo-500 focus:ring-indigo-500/20 resize-none ${formErrors.message ? 'border-red-500 bg-red-500/5' : ''}`}
-                placeholder="Your message"
-              />
-              {formErrors.message && (
-                <p className="text-red-500 text-xs mt-1">{formErrors.message}</p>
-              )}
-            </div>
+            <FormField
+              id="message"
+              name="message"
+              label="Message"
+              type="textarea"
+              required
+              value={formState.message}
+              onChange={handleChange}
+              error={formErrors.message}
+              placeholder="Your message"
+            />
             
             <div>
               <Button
