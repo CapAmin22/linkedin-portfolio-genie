@@ -47,7 +47,10 @@ const Index: React.FC = () => {
     // Preload critical images
     const imagesToPreload = [
       personalInfo.avatar,
-      personalInfo.aboutImage
+      personalInfo.aboutImage,
+      '/lovable-uploads/9a95230f-c95c-4b5b-b7b4-81275a9e227c.png',
+      '/lovable-uploads/2d2f2df8-7465-4659-aa9a-d882724e70c7.png',
+      '/lovable-uploads/84b8c02c-19ec-45fa-be33-9c79abf4ca1a.png'
     ];
     
     imagesToPreload.forEach(imageUrl => {
@@ -59,20 +62,29 @@ const Index: React.FC = () => {
   }, []);
   
   return (
-    <div className="min-h-screen night-sky-with-stars text-white antialiased">
+    <div className="min-h-screen bg-[#05061f] text-white antialiased">
+      <div className="fixed inset-0 bg-cover bg-center z-[-2]" style={{ 
+        backgroundImage: `url('/lovable-uploads/84b8c02c-19ec-45fa-be33-9c79abf4ca1a.png')`,
+        backgroundSize: 'cover',
+        opacity: 0.4
+      }}></div>
+      
+      {/* Enhanced star overlay effect */}
+      <div className="fixed inset-0 bg-[url('/lovable-uploads/2d2f2df8-7465-4659-aa9a-d882724e70c7.png')] bg-repeat z-[-1] opacity-60"></div>
+      
       <Header />
       <main>
         <Hero personalInfo={personalInfo} />
         <About personalInfo={personalInfo} />
         
-        <BackgroundSection bgClass="bg-[#0a0d3d]/60">
+        <BackgroundSection bgClass="bg-gradient-to-r from-indigo-950/90 to-purple-950/90">
           <Experience experiences={experiences} />
           <Projects projects={projects} />
         </BackgroundSection>
         
         <Skills skills={skills} />
         
-        <BackgroundSection bgClass="bg-[#0a0d3d]/70">
+        <BackgroundSection bgClass="bg-gradient-to-r from-purple-950/90 to-indigo-950/90">
           <EducationSection education={education} />
           <Certifications certifications={certifications} />
         </BackgroundSection>
