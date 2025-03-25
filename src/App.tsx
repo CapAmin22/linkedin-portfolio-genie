@@ -39,6 +39,9 @@ const App = () => {
       preload.href = link;
       document.head.appendChild(preload);
     });
+
+    // Log for debugging
+    console.log("App mounted, base path:", basePath);
   }, []);
   
   return (

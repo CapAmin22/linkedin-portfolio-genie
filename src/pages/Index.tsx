@@ -44,6 +44,9 @@ const Index: React.FC = () => {
     // Set page title
     document.title = `${personalInfo.fullName} | Product Manager Portfolio`;
     
+    // Log for debugging
+    console.log("Index page loaded", { personalInfo });
+    
     // Preload critical images
     const imagesToPreload = [
       personalInfo.avatar,
@@ -63,6 +66,7 @@ const Index: React.FC = () => {
   
   return (
     <div className="min-h-screen bg-[#05061f] text-white antialiased">
+      {/* Fixed background elements */}
       <div className="fixed inset-0 bg-cover bg-center z-[-2]" style={{ 
         backgroundImage: `url('/lovable-uploads/84b8c02c-19ec-45fa-be33-9c79abf4ca1a.png')`,
         backgroundSize: 'cover',
