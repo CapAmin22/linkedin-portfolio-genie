@@ -65,14 +65,14 @@ const Index: React.FC = () => {
         <Hero personalInfo={personalInfo} />
         <About personalInfo={personalInfo} />
         
-        <BackgroundSection bgClass="bg-[#0e1155]/30">
+        <BackgroundSection bgClass="bg-[#0a0d3d]/60">
           <Experience experiences={experiences} />
           <Projects projects={projects} />
         </BackgroundSection>
         
         <Skills skills={skills} />
         
-        <BackgroundSection bgClass="bg-[#0e1155]/40">
+        <BackgroundSection bgClass="bg-[#0a0d3d]/70">
           <EducationSection education={education} />
           <Certifications certifications={certifications} />
         </BackgroundSection>

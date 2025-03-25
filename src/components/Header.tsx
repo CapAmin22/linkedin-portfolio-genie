@@ -68,7 +68,7 @@ const Header: React.FC = () => {
     <header 
       className={cn(
         'fixed top-0 left-0 w-full z-50 transition-all duration-300',
-        isScrolled ? 'py-3 bg-[#05061f]/80 backdrop-blur-md shadow-lg' : 'py-5 bg-transparent'
+        isScrolled ? 'py-3 bg-[#05061f]/90 backdrop-blur-md shadow-lg' : 'py-5 bg-transparent'
       )}
     >
       <div className="container mx-auto px-4 flex items-center justify-between">
@@ -88,8 +88,8 @@ const Header: React.FC = () => {
                   href={item.href}
                   onClick={(e) => handleNavClick(e, item.href)}
                   className={cn(
-                    'text-sm font-medium transition-all duration-300 hover:text-primary/90 relative px-1 py-2',
-                    activeSection === item.href.substring(1) ? 'text-primary' : 'text-white/80'
+                    'text-sm font-medium transition-all duration-300 hover:text-primary relative px-1 py-2',
+                    activeSection === item.href.substring(1) ? 'text-primary font-bold' : 'text-white'
                   )}
                 >
                   {item.title}
@@ -108,7 +108,7 @@ const Header: React.FC = () => {
             size="sm"
             onClick={() => {}}
             aria-label="Toggle menu"
-            className="text-white"
+            className="text-white hover:bg-white/10"
           >
             Menu
           </Button>

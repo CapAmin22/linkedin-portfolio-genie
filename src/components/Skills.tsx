@@ -57,10 +57,10 @@ const Skills: React.FC<SkillsProps> = ({ skills }) => {
       <div className="container mx-auto px-4">
         <AnimateIn type="fade-in-up">
           <div className="text-center mb-8">
-            <div className="inline-block px-4 py-1 bg-primary/10 text-primary rounded-full text-sm font-medium mb-4">
+            <div className="inline-block px-4 py-1 bg-primary/20 text-white rounded-full text-sm font-medium mb-4">
               Skills
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold">My Expertise</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-white">My Expertise</h2>
           </div>
         </AnimateIn>
         
@@ -70,14 +70,14 @@ const Skills: React.FC<SkillsProps> = ({ skills }) => {
               key={category} 
               type="fade-in-up"
               delay={idx * 100}
-              className="bg-background rounded-lg shadow-sm p-5 border"
+              className="bg-[#0f1445]/80 backdrop-blur-sm rounded-lg shadow-lg p-5 border border-white/10"
             >
-              <h3 className="text-xl font-semibold mb-3">{categoryLabels[category] || category}</h3>
+              <h3 className="text-xl font-semibold mb-3 text-white">{categoryLabels[category] || category}</h3>
               
               <div className="space-y-3">
                 {groupedSkills[category].map((skill) => (
                   <div key={skill.name} className="flex items-center justify-between">
-                    <span className="text-sm font-medium">{skill.name}</span>
+                    <span className="text-sm font-medium text-white/90">{skill.name}</span>
                     <SkillLevel level={skill.level} />
                   </div>
                 ))}

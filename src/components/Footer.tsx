@@ -21,7 +21,7 @@ const Footer: React.FC<FooterProps> = ({ contactInfo, fullName }) => {
         <div className="flex flex-col md:flex-row items-center justify-between mb-8">
           <div className="mb-4 md:mb-0">
             <h2 className="text-xl font-bold text-white">{fullName}</h2>
-            <p className="text-sm text-white/70 mt-1">Portfolio & Professional Profile</p>
+            <p className="text-sm text-white/80 mt-1">Portfolio & Professional Profile</p>
           </div>
           
           <div className="flex space-x-6">
@@ -30,7 +30,7 @@ const Footer: React.FC<FooterProps> = ({ contactInfo, fullName }) => {
                 href={contactInfo.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-white/70 hover:text-primary transition-colors"
+                className="text-white/80 hover:text-primary transition-colors"
                 aria-label="GitHub"
               >
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -44,7 +44,7 @@ const Footer: React.FC<FooterProps> = ({ contactInfo, fullName }) => {
                 href={contactInfo.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-white/70 hover:text-primary transition-colors"
+                className="text-white/80 hover:text-primary transition-colors"
                 aria-label="LinkedIn"
               >
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -57,7 +57,7 @@ const Footer: React.FC<FooterProps> = ({ contactInfo, fullName }) => {
               href={contactInfo.website}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-white/70 hover:text-primary transition-colors"
+              className="text-white/80 hover:text-primary transition-colors"
               aria-label="Linktree"
             >
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -67,7 +67,7 @@ const Footer: React.FC<FooterProps> = ({ contactInfo, fullName }) => {
             
             <a 
               href={`mailto:${contactInfo.email}`}
-              className="text-white/70 hover:text-primary transition-colors"
+              className="text-white/80 hover:text-primary transition-colors"
               aria-label="Email"
             >
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -78,14 +78,14 @@ const Footer: React.FC<FooterProps> = ({ contactInfo, fullName }) => {
         </div>
         
         <div className="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-white/10">
-          <p className="text-sm text-white/60 mb-4 md:mb-0">
+          <p className="text-sm text-white/70 mb-4 md:mb-0">
             &copy; {currentYear} {fullName}. All rights reserved.
           </p>
           
           <div className="flex items-center space-x-8">
             <button 
               onClick={scrollToTop}
-              className="inline-flex items-center text-sm text-white/60 hover:text-primary transition-colors"
+              className="inline-flex items-center text-sm text-white/70 hover:text-primary transition-colors"
             >
               <span className="mr-2">Back to top</span>
               <ArrowUpIcon size={16} />
