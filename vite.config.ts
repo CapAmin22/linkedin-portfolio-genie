@@ -9,8 +9,8 @@ export default defineConfig(({ mode }) => ({
   // base path - using '/' for all environments to ensure consistent pathing
   base: '/',
   server: {
-    host: "::",
-    port: 8080,
+    host: "0.0.0.0",
+    port: 5000,
   },
   plugins: [
     react(),
