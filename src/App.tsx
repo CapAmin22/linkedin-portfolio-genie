@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
@@ -31,7 +30,7 @@ const App = () => {
       "/lovable-uploads/b3c0efc4-917f-4545-a9bc-e3ae493900f8.png",
       "/lovable-uploads/5c98dae9-ee80-48f0-8cc0-66dbd895b366.png"
     ];
-    
+
     preloadLinks.forEach(link => {
       const preload = document.createElement('link');
       preload.rel = 'preload';
@@ -43,7 +42,7 @@ const App = () => {
     // Log for debugging
     console.log("App mounted, base path:", basePath);
   }, []);
-  
+
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
