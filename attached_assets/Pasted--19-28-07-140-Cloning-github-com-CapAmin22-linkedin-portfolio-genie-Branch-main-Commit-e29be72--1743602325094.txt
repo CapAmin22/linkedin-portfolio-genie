@@ -1,0 +1,49 @@
+[19:28:07.140] Cloning github.com/CapAmin22/linkedin-portfolio-genie (Branch: main, Commit: e29be72)
+[19:28:07.149] Skipping build cache, deployment was triggered without cache.
+[19:28:07.473] Cloning completed: 332.000ms
+[19:28:07.654] Running build in Washington, D.C., USA (East) – iad1
+[19:28:07.804] Running "vercel build"
+[19:28:08.178] Vercel CLI 41.4.1
+[19:28:08.784] Installing dependencies...
+[19:28:18.169] 
+[19:28:18.169] added 411 packages in 9s
+[19:28:18.169] 
+[19:28:18.169] 73 packages are looking for funding
+[19:28:18.169]   run `npm fund` for details
+[19:28:18.290] Running "npm run build"
+[19:28:18.401] 
+[19:28:18.401] > vite_react_shadcn_ts@0.0.0 build
+[19:28:18.402] > vite build
+[19:28:18.402] 
+[19:28:18.782] [36mvite v5.4.10 [32mbuilding for production...[36m[39m
+[19:28:18.830] transforming...
+[19:28:19.095] Browserslist: browsers data (caniuse-lite) is 6 months old. Please run:
+[19:28:19.097]   npx update-browserslist-db@latest
+[19:28:19.097]   Why you should do it regularly: https://github.com/browserslist/update-db#readme
+[19:28:19.892] 
+[19:28:19.893] /lovable-uploads/2d2f2df8-7465-4659-aa9a-d882724e70c7.png referenced in /lovable-uploads/2d2f2df8-7465-4659-aa9a-d882724e70c7.png didn't resolve at build time, it will remain unchanged to be resolved at runtime
+[19:28:22.405] [32m✓[39m 1772 modules transformed.
+[19:28:22.407] [31mx[39m Build failed in 3.60s
+[19:28:22.408] [31merror during build:
+[19:28:22.408] [31msrc/App.tsx (3:9): "Toaster" is not exported by "src/components/ui/toast.tsx", imported by "src/App.tsx".[31m
+[19:28:22.408] file: [36m/vercel/path0/src/App.tsx:3:9[31m
+[19:28:22.409] [33m
+[19:28:22.409] 1: 
+[19:28:22.409] 2: import React, { useEffect } from 'react';
+[19:28:22.409] 3: import { Toaster } from "@/components/ui/toast";
+[19:28:22.409]             ^
+[19:28:22.409] 4: import { Toaster as Sonner } from "@/components/ui/sonner";
+[19:28:22.409] 5: import { TooltipProvider } from "@/components/ui/tooltip";
+[19:28:22.409] [31m
+[19:28:22.409]     at getRollupError (file:///vercel/path0/node_modules/rollup/dist/es/shared/parseAst.js:395:41)
+[19:28:22.409]     at error (file:///vercel/path0/node_modules/rollup/dist/es/shared/parseAst.js:391:42)
+[19:28:22.410]     at Module.error (file:///vercel/path0/node_modules/rollup/dist/es/shared/node-entry.js:15535:16)
+[19:28:22.410]     at Module.traceVariable (file:///vercel/path0/node_modules/rollup/dist/es/shared/node-entry.js:15984:29)
+[19:28:22.410]     at ModuleScope.findVariable (file:///vercel/path0/node_modules/rollup/dist/es/shared/node-entry.js:13770:39)
+[19:28:22.410]     at ReturnValueScope.findVariable (file:///vercel/path0/node_modules/rollup/dist/es/shared/node-entry.js:5252:38)
+[19:28:22.410]     at FunctionBodyScope.findVariable (file:///vercel/path0/node_modules/rollup/dist/es/shared/node-entry.js:5252:38)
+[19:28:22.410]     at Identifier.bind (file:///vercel/path0/node_modules/rollup/dist/es/shared/node-entry.js:5035:40)
+[19:28:22.411]     at CallExpression.bind (file:///vercel/path0/node_modules/rollup/dist/es/shared/node-entry.js:2851:28)
+[19:28:22.411]     at CallExpression.bind (file:///vercel/path0/node_modules/rollup/dist/es/shared/node-entry.js:11235:15)[39m
+[19:28:22.437] Error: Command "npm run build" exited with 1
+[19:28:22.931] 
