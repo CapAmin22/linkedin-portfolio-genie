@@ -7,10 +7,14 @@ channel = "stable-24_05"
 [deployment]
 run = ["sh", "-c", "npm run dev"]
 
+[[deployment.rewrites]]
+from = "/*"
+to = "/index.html"
+
 [[ports]]
 localPort = 8080
 externalPort = 80
 
-[[deployment.rewrites]]
-from = "/*"
-to = "/index.html"
+[[ports]]
+localPort = 8081
+externalPort = 8081
