@@ -36,5 +36,9 @@ export default defineConfig(({ mode }) => ({
     sourcemap: mode !== 'production',
     // Minify the output
     minify: mode === 'production' ? 'terser' : false,
+    // Add chunk size optimization
+    chunkSizeWarningLimit: 1000,
+    // Improve CSS minification
+    cssMinify: mode === 'production',
   },
 }));
